@@ -1,0 +1,1268 @@
+,id,CharName,Abbrev,Description
+0,1,First Apparition,First Apparition,
+1,2,First Citizen,First Citizen,
+2,3,First Conspirator,First Conspirator,
+3,4,First Gentleman,First Gentleman,
+4,5,First Goth,First Goth,
+5,6,First Murderer,First Murderer,
+6,7,First Musician,First Musician,
+7,8,First Musician,First Musician,
+8,9,First Officer,First Officer,
+9,10,First Player,1Play,
+10,11,First Senator,First Senator,
+11,12,First Senator,First Senator,A senator of Venice
+12,13,First Servant,First Servant,
+13,14,First Serving-Man,First Serving-Man,
+14,15,First Soldier,First Soldier,
+15,16,First Watchman,First Watchman,
+16,17,First Watchman,First Watchman,
+17,18,First Witch,First Witch,
+18,19,Second Apparition,Second Apparition,
+19,20,Second Conspirator,Second Conspirator,
+20,21,Second Gentleman,Second Gentleman,
+21,22,Second Goth,Second Goth,
+22,23,Second Murderer,Second Murderer,
+23,24,Second Musician,Second Musician,
+24,25,Second Patrician,Second Patrician,
+25,26,Second Senator,Second Senator,
+26,27,Second Senator,Second Senator,A senator of Venice
+27,28,Second Servant,Second Servant,
+28,29,Second Serving-Man,Second Serving-Man,
+29,30,Second Soldier,Second Soldier,
+30,31,Second Watchman,Second Watchman,
+31,32,Second Watchman,Second Watchman,
+32,33,Second Witch,Second Witch,
+33,34,Third Apparition,Third Apparition,
+34,35,Third Conspirator,Third Conspirator,
+35,36,Third Gentleman,Third Gentleman,
+36,37,Third Goth,Third Goth,
+37,38,Third Murderer,Third Murderer,
+38,39,Third Musician,Third Musician,
+39,40,Third Serving-Man,Third Serving-Man,
+40,41,Third Watchman,Third Watchman,
+41,42,Third Witch,Third Witch,
+42,43,Fourth Gentleman,Fourth Gentleman,
+43,44,Aaron,AARON,"a Moor, beloved by Tamora"
+44,45,Abbot,Abbot,
+45,46,Lord Abergavenny,ABERGAVENNY,
+46,47,Abhorson,ABHORSON,an executioner
+47,48,Abraham,ABRAHAM,Servant to Montague
+48,49,Achilles,ACHILLES,a Greek prince
+49,50,Adam,ADAM,servant to Oliver
+50,51,Adriana,ADRIANA,wife to Antipholus of Ephesus
+51,52,Adrian,ADRIAN,a lord
+52,53,Aedile,Aedile,
+53,54,Aegeon,AEGEON,a merchant of Syracuse
+54,55,Aemilia,AEMILIA,"wife to Aegeon, an abbess at Ephesus"
+55,56,Aemilius,AEMILIUS,a noble Roman
+56,57,Aeneas,AENEAS,one of the Trojan commanders
+57,58,Agamemnon,AGAMEMNON,the Greek general
+58,59,Agrippa,AGRIPPA,friend to Caesar
+59,60,Sir Andrew Aguecheek,SIR ANDREW,
+60,61,Ajax,AJAX,a Greek prince
+61,62,Alarbus,ALARBUS,son to Tamora
+62,63,Alcibiades,ALCIBIADES,an Athenian captain
+63,64,Alexander,ALEXANDER,servant to Cressida
+64,65,Alexander Iden,IDEN,a Kentish gentleman
+65,66,Alexas,ALEXAS,attendant on Cleopatra
+66,67,Alice,ALICE,a lady attending on Princess Katherine
+67,68,All,All,
+68,69,All,All,
+69,70,All Citizens,All Citizens,
+70,71,All Conspirators,All Conspirators,
+71,72,All,All,
+72,73,All,All,
+73,74,All the Goths,All the Goths,
+74,75,All,All,
+75,76,All,All,
+76,77,All,All,
+77,78,All,All,
+78,79,All,All,
+79,80,All,All,
+80,81,All,All,
+81,82,All,All,
+82,83,All Ladies,All Ladies,
+83,84,All Lords,All Lords,
+84,85,All Lords,All Lords,
+85,86,All,ALL,
+86,87,All,All,
+87,88,All,All,
+88,89,All,All,
+89,90,All,All,
+90,91,All The People,All The People,
+91,92,All,All,
+92,93,All,All,
+93,94,All Servants,All Servants,
+94,95,All,All,
+95,96,All,All,
+96,97,All,All,
+97,98,All,ALL,
+98,99,Alonso,ALONSO,king of Naples
+99,100,Ambassador,Ambassador,
+100,101,Amiens,AMIENS,lord attending on the banished Duke
+101,102,Andromache,ANDROMACHE,wife to Hector
+102,103,Angelo,ANGELO,a goldsmith
+103,104,Angelo,ANGELO,deputy
+104,105,Angus,ANGUS,Nobleman of Scotland
+105,106,Anne Bullen,QUEEN ANNE,"Katharine's maid of honor, afterwards Queen"
+106,107,Anne Page,ANNE PAGE,Mistress Page's daughter
+107,108,Another,ANOTHER,Another
+108,109,Antenor,ANTENOR,one of the Trojan commanders
+109,110,Antigonus,ANTIGONUS,a lord of Sicilia
+110,111,Antiochus,ANTIOCHUS,king of Antioch
+111,112,Daughter of Antiochus,Daughter,
+112,113,Antipholus of Ephesus,ANTIPHOLUS OF EPHESUS,"twin brother of Antipholus of Syracuse, son to Aegeon and Aemilia"
+113,114,Antipholus of Syracuse,ANTIPHOLUS OF SYRACUSE,"twin brother of Antipholus of Ephesus, son to Aegeon and Aemelia"
+114,115,Antonio,ANTONIO,Leonato's brother
+115,116,Antonio,ANTONIO,"a sea captain, friend to Sebastain"
+116,117,Antonio,ANTONIO,a merchant of Venice
+117,118,Antonio,ANTONIO,"the King's brother, the usurping Duke of Milan"
+118,119,Antonio,ANTONIO,father to Proteus
+119,120,Antony,ANTONY,(Marcus Antonius)
+120,121,Apemantus,APEMANTUS,a churlish philosopher
+121,122,Apothecary,Apothecary,
+122,123,Archidamus,ARCHIDAMUS,a lord of Bohemia
+123,124,Ariel,ARIEL,an airy spirit
+124,125,Artemidorus,ARTEMIDORUS,"of Cnidos, a teacher of rhetoric."
+125,126,Arthur,ARTHUR,"Duke of Bretagne, nephew to the king"
+126,127,Arviragus,ARVIRAGUS,"son to Cymbeline, disguised under the name of Cadwal, supposed son to Morgan"
+127,128,Attendants,Attendants,
+128,129,Attendant,Attendant,
+129,130,Attendant,Attendant,
+130,131,Attendant,ATTENDANT,
+131,132,Audrey,AUDREY,a country wench
+132,133,Duke of Aumerle,DUKE OF AUMERLE,son of the Duke of York
+133,134,Autolycus,AUTOLYCUS,a rogue
+134,135,Bagot,BAGOT,servant to King Richard II
+135,136,Balthasar,BALTHASAR,Servant to Romeo
+136,137,Balthasar,BALTHASAR,Attendant on Don Pedro
+137,138,Balthasar,BALTHASAR,servant to Portia
+138,139,Balthazar,BALTHAZAR,a merchant
+139,140,Banditti,Banditti,
+140,141,Banquo,BANQUO,General of the King's army
+141,142,Baptista Minola,BAPTISTA,a gentleman of Padua
+142,143,Lord Bardolph,LORD BARDOLPH,
+143,144,Bardolph,BARDOLPH,
+144,145,Bardolph,BARDOLPH,sharper attending on Falstaff
+145,146,Barnardine,BARNARDINE,a dissolute prisoner
+146,147,Bassanio,BASSANIO,"Antonio's friend, suitor likewise to Portia"
+147,148,Basset,BASSET,"of the Red Rose, or Lancaster, faction"
+148,149,Bassianus,BASSIANUS,brother to Saturninus; in love with Lavinia
+149,150,Bastard of Orleans,BASTARD OF ORLEANS,
+150,151,Bates,BATES,soldier in King Henry's army
+151,152,Bawd,Bawd,
+152,153,Beadle,Beadle,
+153,154,First Beadle,FIRST BEADLE,
+154,155,Second Beadle,SECOND BEADLE,
+155,156,Beatrice,BEATRICE,Niece to Leonato
+156,157,Duke of Bedford,BEDFORD,"brother to Henry IV, uncle to Henry V"
+157,158,Belarius,BELARIUS,"a banished lord, disguised under the name of Morgan"
+158,159,Sir Toby Belch,SIR TOBY BELCH,uncle to Olivia
+159,160,Benedick,BENEDICK,A young lord of Padua
+160,161,Benvolio,BENVOLIO,"Nephew to Montague, and friend to Romeo"
+161,162,Berkeley,BERKELEY,a gentleman attending on Lady Anne
+162,163,Bernardo,Ber,sentinel
+163,164,Bertram,BERTRAM,Count of Rousillon
+164,165,George Bevis,BEVIS,a follower of Cade
+165,166,Bianca,BIANCA,
+166,167,Bianca,BIANCA,Mistress to Cassio
+167,168,Lord Bigot,BIGOT,
+168,169,Biondello,BIONDELLO,
+169,170,Biron,BIRON,lord attending on the king
+170,171,Bishop of Carlisle,BISHOP OF CARLISLE,
+171,172,Bishop Lincoln,LINCOLN,
+172,173,Blanch,BLANCH,"of Spain, niece to King John"
+173,174,Blunt,BLUNT,
+174,175,Blunt,Blunt,
+175,176,Boatswain,Boatswain,
+176,177,Bolingbroke,BOLINGBROKE,a conjurer
+177,178,Bona,BONA,sister to the French Queen
+178,179,Borachio,BORACHIO,Follower of Don Juan
+179,180,Both,Both,
+180,181,Both Citizens,Both Citizens,
+181,182,Both,Both,
+182,183,Both,Both,
+183,184,Both,Both,
+184,185,Both,Both,
+185,186,Both,Both,
+186,187,Both,Both,
+187,188,Both Tribunes,Both Tribunes,
+188,189,Bottom,BOTTOM,a weaver
+189,190,Boult,BOULT,Pandar's servant
+190,191,Duke of Bourbon,BOURBON,
+191,192,Boyet,BOYET,lord attending on the princess of France
+192,193,Boy,Boy,
+193,194,Boy,Boy,son of the Master-Gunner
+194,195,Boy,Boy,
+195,196,Boy,Boy,a young son of Clarence
+196,197,Boy,Boy,servant to Troilus
+197,198,Brabantio,BRABANTIO,A senator of Venice
+198,199,Brandon,BRANDON,
+199,200,Brothers,BROTHERS,
+200,201,Brutus,BRUTUS,(Marcus Brutus)
+201,202,Peter Bullcalf,BULLCALF,country soldier
+202,203,Bushy,BUSHY,servant to King Richard II
+203,204,Caithness,CAITHNESS,Nobleman of Scotland
+204,205,Caius,CAIUS,kinsman to Titus
+205,206,Caius Lucius,CAIUS LUCIUS,general of the Roman forces
+206,207,Calchas,CALCHAS,"a Trojan priest, taking part with the Greeks"
+207,208,Caliban,CALIBAN,a savage and deformed slave
+208,209,Calpurnia,CALPURNIA,wife to Caesar
+209,210,Earl of Cambridge,CAMBRIDGE,
+210,211,Camillo,CAMILLO,a lord of Sicilia
+211,212,Cardinal Campeius,CARDINAL CAMPEIUS,
+212,213,Canidius,CANIDIUS,lieutenant-general to Antony
+213,214,Archbishop of Canterbury,CANTERBURY,
+214,215,Caphis,CAPHIS,servant to Timon's creditors
+215,216,Captain,Captain,
+216,217,Captain,Captain,
+217,218,Captain,Captain,
+218,219,Captain,Capt,
+219,220,Captain,Captain,
+220,221,Captain,Captain,
+221,222,Capucius,CAPUCIUS,Ambassador from the Emperor Charles V
+222,223,Capulet,CAPULET,Head of the house of Capulet
+223,224,Second Capulet,Second Capulet,"An old man, cousin to Capulet"
+224,225,Cardinal Bourchier,CARDINAL,archbishop of Canterbury
+225,226,Cardinal Pandulph,CARDINAL PANDULPH,the Pope's legate
+226,227,Carrier,Carrier,
+227,228,Casca,CASCA,a conspirator against Caesar
+228,229,Cassandra,CASSANDRA,"daughter to Priam, a prophetess"
+229,230,Cassio,CASSIO,Othello's lieutenant
+230,231,Cassius,CASSIUS,a conspirator against Caesar
+231,232,Young Cato,CATO,friend to Brutus
+232,233,Celia,CELIA,daughter to Frederick
+233,234,Ceres,CERES,presented by spirits
+234,235,Cerimon,CERIMON,a lord of Ephesus
+235,236,Chamberlain,Chamberlain,
+236,237,Charles,CHARLES,wrestler to Frederick
+237,238,"Charles, King of France",CHARLES,king of France
+238,239,Charmian,CHARMIAN,attendant on Cleopatra
+239,240,Chatillon,CHATILLON,ambassador from France to King John
+240,241,Lord Chief Justice,CHIEF JUSTICE,
+241,242,Children,Children,
+242,243,Chiron,CHIRON,son to Tamora
+243,244,Chorus,Chorus,
+244,245,Chorus,Chorus,
+245,246,Chorus,Chorus,
+246,247,Chorus,Chorus,
+247,248,Christopher Urswick,CHRISTOPHER,a priest
+248,249,Cicero,Ciceronis,Senator
+249,250,Cinna,CINNA,a conspirator against Caesar
+250,251,Cinna the Poet,CINNA THE POET,
+251,252,Citizen,Citizen,
+252,253,Citizens,Citizens,
+253,254,Citizens,Citizens,
+254,255,Citizens,Citizens,
+255,256,Claudio,CLAUDIO,A young lord of Florence
+256,257,Claudio,CLAUDIO,a young gentleman
+257,258,Claudius,King,King of Denmark
+258,259,Claudius,CLAUDIUS,servant to Brutus
+259,260,Cleomenes,CLEOMENES,a lord of Sicilia
+260,261,Cleon,CLEON,governor of Tarsus
+261,262,Cleopatra,CLEOPATRA,queen of Egypt
+262,263,Clerk of Chatham,Clerk,
+263,264,Clerk,Clerk,
+264,265,Clitus,CLITUS,servant to Brutus
+265,266,Cloten,CLOTEN,son to the Queen by a former husband
+266,267,First Clown,Clown,
+267,268,Second Clown,Other,
+268,269,Clown,Clown,
+269,270,Clown,Clown,servant to the Countess
+270,271,Clown,Clown,Servant to Othello
+271,272,Clown,Clown,
+272,273,Clown,Clown,son of the old Shepherd
+273,274,Cobweb,COBWEB,a fairy
+274,275,Sir John Colville,COLVILLE,
+275,276,Cominius,COMINIUS,general against the Volscians
+276,277,Commons,Commons,
+277,278,Conrade,CONRADE,Follower of Don Juan
+278,279,Constable of France,Constable,
+279,280,Constance,CONSTANCE,mother to Arthur
+280,281,Cordelia,Cor,daughter to Lear
+281,282,Corin,CORIN,shepherd
+282,283,Coriolanus,CORIOLANUS,previously Caius Marcius Coriolanus
+283,284,Cornelius,Cor,courtier
+284,285,Cornelius,CORNELIUS,a physician
+285,286,Costard,COSTARD,a clown
+286,287,Countess of Auvergne,COUNTESS OF AUVERGNE,
+287,288,Countess,COUNTESS,mother to Bertram
+288,289,Court,COURT,soldier in King Henry's army
+289,290,Courtezan,Courtezan,
+290,291,Archbishop Cranmer,CRANMER,Archbishop of Canterbury
+291,292,Cressida,CRESSIDA,daughter to Calchas
+292,293,Crier,Crier,
+293,294,Cromwell,CROMWELL,servant to Wolsey
+294,295,Cupid,Cupid,
+295,296,Curan,Cur,a courtier
+296,297,Curio,CURIO,gentleman attending on the Duke
+297,298,Curtis,CURTIS,
+298,299,Cymbeline,CYMBELINE,king of Britain
+299,300,Dardanius,DARDANIUS,servant to Brutus
+300,301,Lewis the Dauphin,DAUPHIN,
+301,302,Davy,DAVY,servant to Shallow
+302,303,Decius Brutus,DECIUS BRUTUS,a conspirator against Caesar
+303,304,Deiphobus,DEIPHOBUS,"son of Priam, king of Troy"
+304,305,Demetrius,Demetrius,son to Tamora
+305,306,Demetrius,DEMETRIUS,friend to Antony
+306,307,Demetrius,DEMETRIUS,in love with Hermia
+307,308,Dennis,DENNIS,shepherd
+308,309,Sir Anthony Denny,DENNY,
+309,310,Dercetas,DERCETAS,friend to Antony
+310,311,Desdemona,DESDEMONA,Daughter to Brabantio and wife to Othello
+311,312,Diana,DIANA,daughter to the Widow
+312,313,Diana,DIANA,
+313,314,Dick the Butcher,DICK,a follower of Cade
+314,315,Diomedes,DIOMEDES,attendant on Cleopatra
+315,316,Diomedes,DIOMEDES,a Greek prince
+316,317,Dion,DION,a lord of Sicilia
+317,318,Dionyza,DIONYZA,wife to Cleon
+318,319,Doctor Butts,DOCTOR BUTTS,physician to the King
+319,320,Doctor Caius,DOCTOR CAIUS,a French physician
+320,321,Doctor,Doct,
+321,322,Doctor,Doctor,
+322,323,Dogberry,DOGBERRY,A constable
+323,324,Dolabella,DOLABELLA,friend to Caesar
+324,325,Domitius Enobarus,DOMITIUS ENOBARBUS,friend to Antony
+325,326,Don Adriano de Armado,DON ADRIANO DE ARMADO,a fantastical Spaniard
+326,327,Donalbain,DONALBAIN,Son of Duncan
+327,328,Don John,DON JOHN,The prince's bastard brother
+328,329,Don Pedro,DON PEDRO,Prince of Arragon
+329,330,Dorcas,DORCAS,a shepherdess
+330,331,Second Drawer,SECOND DRAWER,
+331,332,Third Drawer,THIRD DRAWER,
+332,333,Dromio of Ephesus,DROMIO OF EPHESUS,"twin brother to Dromio of Syracuse, and attendant on the two Antipholuses"
+333,334,Dromio of Syracuse,DROMIO OF SYRACUSE,"twin brother to Dromio of Ephesus, and attendant on the two Antipholuses"
+334,335,Duchess of Gloucester,DUCHESS,
+335,336,Duchess of York,DUCHESS OF YORK,
+336,337,Duchess of York,DUCHESS of YORK,mother to King Edward IV
+337,338,Duke,DUKE,of Venice
+338,339,Duke of Albany,Alb,
+339,340,Duke of Alencon,ALENCON,
+340,341,Duke,DUKE SENIOR,living in exile
+341,342,Duke of Buckingham,BUCKINGHAM,
+342,343,Duke of Buckingham,BUCKINGHAM,
+343,344,Duke of Burgundy,Bur,
+344,345,Duke of Burgundy,BURGUNDY,
+345,346,Duke of Cornwall,Corn,
+346,347,Duke of Florence,DUKE,
+347,348,Duke of Milan,DUKE,father to Silvia
+348,349,Duke of Norfolk,NORFOLK,
+349,350,Duke of Norfolk,NORFOLK,
+350,351,Duke of Suffolk,SUFFOLK,
+351,352,Duke of Surrey,DUKE OF SURREY,
+352,353,Duke of Venice,DUKE OF VENICE,
+353,354,Dull,DULL,a constable
+354,355,Dumain,DUMAIN,lord attending on the king
+355,356,Duncan,DUNCAN,King of Scotland
+356,357,Earl of Douglas,Earl of Douglas,
+357,358,Earl of Kent,Kent,
+358,359,Earl of Northumberland,NORTHUMBERLAND,
+359,360,Earl of Northumberland,NORTHUMBERLAND,
+360,361,Earl Oxford,OXFORD,
+361,362,"Henry, Earl of Richmond",HENRY OF RICHMOND,a youth
+362,363,Earl of Suffolk,SUFFOLK,
+363,364,Earl of Surrey,SURREY,
+364,365,Earl of Surrey,SURREY,son of the Duke of Norfolk
+365,366,Earl of Westmoreland,WESTMORELAND,
+366,367,Edgar,Edg,son of Glouchester
+367,368,"Edmond, Earl of Rutland",RUTLAND,
+368,369,Edmund,Edm,bastard son to Glouchester
+369,370,Edmund of Langley,DUKE OF YORK,"duke of York, uncle to the king"
+370,371,Edmund Mortimer,MORTIMER,Earl of March
+371,372,King Edward IV (Plantagenet),EDWARD,
+372,373,Egeus,EGEUS,father to Hermia
+373,374,Eglamour,EGLAMOUR,agent for Silvia in her escape
+374,375,Egyptian,Egyptian,
+375,376,Elbow,ELBOW,a simple constable
+376,377,Eleanor,DUCHESS,duchess of Gloucester
+377,378,Bishop of Ely,ELY,
+378,379,Emilia,EMILIA,Wife to Iago
+379,380,Emilia,EMILIA,a lady attending on Hermione
+380,381,English Herald,English Herald,
+381,382,Eros,EROS,friend to Antony
+382,383,Sir Thomas Erpingham,ERPINGHAM,
+383,384,Prince Escalus,PRINCE,Prince of Verona
+384,385,Escalus,ESCALUS,Escalus
+385,386,Escanes,ESCANES,a lord of Tyre
+386,387,Essex,ESSEX,earl of Essex
+387,388,Euphronius,EUPHRONIUS,an ambassador from Antony to Caesar
+388,389,Duke of Exeter,EXETER,"uncle to Henry IV, great-uncle to Henry V"
+389,390,Sir Pierce of Exton,EXTON,
+390,391,Fabian,FABIAN,servant to Olivia
+391,392,Fairy,Fairy,
+392,393,Falstaff,FALSTAFF,Sir John Falstaff
+393,394,Fang,FANG,a Sheriff's officer
+394,395,Father,Father,who has killed his son
+395,396,Faulconbridge,ROBERT,son of Sir Robert Faulconbridge
+396,397,Francis Feeble,FEEBLE,country soldier
+397,398,Fenton,FENTON,a gentleman
+398,399,Ferdinand,FERDINAND,king of Navarre
+399,400,Ferdinand,FERDINAND,son to the King of Naples
+400,401,Feste,Clown,"a clown, servant to Olivia"
+401,402,Fifth Citizen,Fifth Citizen,
+402,403,First Ambassador,First Ambassador,
+403,404,First Attendant,First Attendant,
+404,405,First Bandit,First Bandit,
+405,406,First Brother,First Brother,an apparition
+406,407,First British Captain,First Captain,
+407,408,First Carrier,First Carrier,
+408,409,First Citizen,First Citizen,
+409,410,First Citizen,First Citizen,
+410,411,First Citizen,First Citizen,
+411,412,First Citizen,First Citizen,
+412,413,First Citizen,First Citizen,
+413,414,First Commoner,First Commoner,
+414,415,First Executioner,First Executioner,
+415,416,First Fisherman,First Fisherman,
+416,417,First Gaoler,First Gaoler,
+417,418,First Gaoler,First Gaoler,
+418,419,First Gentleman,First Gentleman,
+419,420,First Gentleman,First Gentleman,
+420,421,First Gentleman,First Gentleman,a gentleman of Cymbeline's court
+421,422,First Gentleman,First Gentleman,
+422,423,First Gentleman,First Gentleman,
+423,424,First Gentleman,First Gentleman,
+424,425,First Gentleman,First Gentleman,
+425,426,First Guard,First Guard,
+426,427,First Herald,First Herald,
+427,428,First Keeper,First Keeper,
+428,429,First Knight,First Knight,
+429,430,First Lady,First Lady,
+430,431,First Lady,First Lady,
+431,432,First Lady,First Lady,
+432,433,First Lord,First Lord,
+433,434,First Lord,First Lord,
+434,435,First Lord,FIRST LORD,
+435,436,First Lord,First Lord,a lord of Cymbeline's court
+436,437,First Lord,First Lord,
+437,438,First Lord,First Lord,
+438,439,First Lord,First Lord,
+439,440,First Lord,First Lord,
+440,441,First Merchant,First Merchant,friend to Antipholus of Syracuse
+441,442,First Messenger,First Messenger,
+442,443,First Murderer,First Murderer,
+443,444,First Murderer,First Murderer,
+444,445,First Neighbour,First Neighbour,
+445,446,First Officer,First Officer,
+446,447,First Officer,First Officer,
+447,448,First Officer,First Officer,
+448,449,First Outlaw,First Outlaw,
+449,450,First Petitioner,First Petitioner,
+450,451,First Pirate,First Pirate,
+451,452,First 'Prentice,First 'Prentice,
+452,453,First Roman,First Roman,
+453,454,First Sailor,First Sailor,
+454,455,First Secretary,First Secretary,to Wolsey
+455,456,First Senator,First Senator,
+456,457,First Senator,First Senator,
+457,458,First Sentinel,First Sentinel,
+458,459,First Servant,First Servant,
+459,460,First Servant,First Servant,
+460,461,First Servant,First Servant,
+461,462,First Servant,First Servant,
+462,463,First Servant,First Servant,
+463,464,First Serviceman,First Serviceman,
+464,465,First Servingman,First Servingman,
+465,466,First Soldier,First Soldier,
+466,467,First Soldier,First Soldier,
+467,468,First Soldier,First Soldier,
+468,469,First Soldier,First Soldier,
+469,470,First Stranger,First Stranger,
+470,471,First Traveller,First Traveller,
+471,472,First Tribune,First Tribune,
+472,473,First Warder,First Warder,
+473,474,First Watchman,First Watchman,
+474,475,Flaminius,Flaminius,
+475,476,Flavius,FLAVIUS,steward to Timon
+476,477,Flavius,FLAVIUS,a tribune
+477,478,Fleance,FLEANCE,Son to Banquo
+478,479,Florizel,FLORIZEL,prince of Bohemia
+479,480,Fluellen,FLUELLEN,
+480,481,Flute,FLUTE,a bellows-mender
+481,482,Fool,Fool,
+482,483,Fool,Fool,
+483,484,Ford,FORD,a gentleman dwelling at Windsor
+484,485,Forester,Forester,
+485,486,Fortinbras,Fort,Prince of Norway
+486,487,Fourth Citizen,Fourth Citizen,
+487,488,Fourth Citizen,Fourth Citizen,
+488,489,Fourth Lord,Fourth Lord,
+489,490,Fourth Lord,Fourth Lord,
+490,491,Fourth Messenger,Fourth Messenger,
+491,492,Fourth Soldier,Fourth Soldier,
+492,493,Francisca,FRANCISCA,a nun
+493,494,Francisco,Fran,a soldier
+494,495,Francisco,FRANCISCO,a lord
+495,496,Francis,FRANCIS,a drawer
+496,497,Frederick,FREDERICK,"the Duke's brother, and usurper of his dominions"
+497,498,French Herald,French Herald,
+498,499,King of France,FRENCH KING,Charles VI
+499,500,Frenchman,Frenchman,friend to Philario
+500,501,French Soldier,French Soldier,
+501,502,Friar Francis,FRIAR FRANCIS,
+502,503,Friar John,FRIAR JOHN,Franciscan friar
+503,504,Friar Laurence,FRIAR LAURENCE,Franciscan friar
+504,505,Friar Peter,FRIAR PETER,
+505,506,Friar Thomas,FRIAR THOMAS,
+506,507,Froth,FROTH,a foolish gentleman
+507,508,Gadshill,Gadshill,
+508,509,Gallus,GALLUS,friend to Caesar
+509,510,Gaoler,Gaoler,
+510,511,Gaoler,Gaoler,
+511,512,Gardener,Gardener,
+512,513,Gardiner,GARDINER,bishop of Winchester
+513,514,Garter,Garter,King-at-Arms
+514,515,Host,Host,host of the Garter Inn
+515,516,General,General,of the French forces in Bordeaux
+516,517,Gentleman,Gentleman,
+517,518,Gentleman,Gentleman,
+518,519,Gentleman,Gent,
+519,520,Gentleman,Gentleman,
+520,521,Gentleman,Gentleman,
+521,522,Gentleman,Gentleman,
+522,523,Gentlemen,GENTLEMEN,
+523,524,Gentlewoman,Gentlewoman,attending on Virgilia
+524,525,Gentlewoman,Gentlewoman,
+525,526,Gentlemen,Gentlemen,
+526,527,George Plantagenet (Duke of Clarence),GEORGE,
+527,528,Gertrude,Queen,Queen of Denmark and mother to Hamlet
+528,529,Girl,Girl,
+529,530,Glendower,GLENDOWER,
+530,531,Duke of Gloucester,GLOUCESTER,brother to the King
+531,532,Earl of Glouchester,Glou,
+532,533,Goneril,Gon,daughter to Lear
+533,534,Gonzalo,GONZALO,an honest old counsellor
+534,535,Governor of Harfleur,GOVERNOR,
+535,536,Gower,GOWER,
+536,537,Gower,GOWER,as chorus
+537,538,Grandpre,GRANDPRE,French lord
+538,539,Gratiano,GRATIANO,Brother to Brabantio
+539,540,Gratiano,GRATIANO,friend to Antonio and Bassiano
+540,541,Green,GREEN,servant to King Richard II
+541,542,Gregory,GREGORY,Servant to Gregory
+542,543,Gremio,GREMIO,
+543,544,Sir Thomas Grey,GREY,
+544,545,Griffith,GRIFFITH,gentleman-usher to Queen Katherine
+545,546,Groom,Groom,
+546,547,First Groom,FIRST GROOM,
+547,548,Second Groom,SECOND GROOM,
+548,549,Third Groom,THIRD GROOM,
+549,550,Grumio,GRUMIO,Petruchio's man
+550,551,Guard,Guard,
+551,552,Guiderius,GUIDERIUS,"son to Cymbeline, disguised under the name of Polydote, supposed son to Morgan"
+552,553,Guildenstern,Guil,courtier
+553,554,Sir Henry Guildford,GUILDFORD,
+554,555,James Gurney,GURNEY,servant to Lady Faulconbridge
+555,556,Haberdasher,HABERDASHER,
+556,557,Gentleman,Gent,courtier
+557,558,Father's Ghost,Ghost,Ghost of Hamlet's Father
+558,559,Hamlet,Ham,son of the former king and nephew to the present king
+559,560,Players,,
+560,561,Priest,Priest,
+561,562,Harcourt,HARCOURT,
+562,563,Lord Hastings,HASTINGS,
+563,564,Hecate,HECATE,
+564,565,Hector,HECTOR,"son of Priam, king of Troy"
+565,566,Helen,HELEN,wife to Menelaus
+566,567,Helena,HELENA,a gentlewoman protected by the Countess
+567,568,Helena,HELENA,in love with Demetrius
+568,569,Helen,HELEN,a lady attending on Cymbeline
+569,570,Helenus,HELENUS,"son of Priam, king of Troy"
+570,571,Helicanus,HELICANUS,a lord of Tyre
+571,572,Henry IV,KING HENRY IV,King of England
+572,573,Henry V,HENRY5,"Prince, King of England"
+573,574,Henry VI,KING HENRY VI,
+574,575,Richmond (Henry VII),King Henry VII,"Earl of Richmond, later Henry VII"
+575,576,Henry VIII,KING HENRY VIII,
+576,577,Winchester,BISHOP OF WINCHESTER,"Henry Beaufort, great-uncle to Henry V, bishop of Winchster, and later cardinal"
+577,578,Herald,Herald,
+578,579,Herald,Herald,
+579,580,Herald,Herald,
+580,581,Herald,Her,
+581,582,Herald,Herald,
+582,583,Hermia,HERMIA,"daughter to Egeus, in love with Lysander"
+583,584,Hermione,HERMIONE,queen to Leontes
+584,585,Hero,HERO,Daughter to Leonato
+585,586,Hippolyta,HIPPOLYTA,"queen of the Amazons, betrothed to Theseus"
+586,587,Holofernes,HOLOFERNES,a schoolmaster
+587,588,Horatio,Hor,friend to Hamlet
+588,589,Hortensio,HORTENSIO,
+589,590,Hortensius,HORTENSIUS,
+590,591,Host,Host,where Julia lodges
+591,592,Hostess,HOSTESS,
+592,593,Hotspur (Henry Percy),HOTSPUR,
+593,594,Hubert de Burgh,HUBERT,
+594,595,Huntsman,Huntsman,
+595,596,First Huntsman,FIRST HUNTSMAN,
+596,597,Second Huntsman,SECOND HUNTSMAN,
+597,598,Hymen,HYMEN,
+598,599,Iachimo,IACHIMO,"friend to Philario, an Italian."
+599,600,Iago,IAGO,Othello's ancient (?)
+600,601,Imogen,IMOGEN,daughter to Cymbeline by a former queen
+601,602,Iras,IRAS,attendant on Cleopatra
+602,603,Iris,IRIS,presented by spirits
+603,604,Queen Isabel,QUEEN ISABEL,
+604,605,Isabella,ISABELLA,sister to Claudio
+605,606,Jack Cade,CADE,a rebel
+606,607,Jamy,JAMY,
+607,608,Jaquenetta,JAQUENETTA,a country wench
+608,609,Jaques (lord),JAQUES,"the Duke's brother, and usurper of his dominions"
+609,610,Jaques (son),JAQUES DE BOYS,"the Duke's brother, and usurper of his dominions"
+610,611,Jessica,JESSICA,daughter to Shylock
+611,612,Jeweller,Jeweller,
+612,613,Joan la Pucelle,JOAN LA PUCELLE,commonly called Joan of Arc
+613,614,John of Gaunt,JOHN OF GAUNT,"duke of Lancaster, uncle to the king"
+614,615,John Holland,HOLLAND,a follower of Cade
+615,616,Father John Hume,HUME,a priest
+616,617,John Morton,BISHOP OF ELY,bishop of Ely
+617,618,Father John Southwell,JOHN SOUTHWELL,a priest
+618,619,Joseph,JOSEPH,a servingman
+619,620,Margaret Jourdain,MARGARET JOURDAIN,a witch
+620,621,Julia,JULIA,beloved of Proteus
+621,622,Juliet,JULIET,Daughter to Capulet
+622,623,Juliet,JULIET,beloved of Claudio
+623,624,Caesar,CAESAR,(Julius Caesar)
+624,625,Junius Brutus,BRUTUS,tribune of the people
+625,626,Juno,JUNO,presented by spirits
+626,627,Jupiter,Jupiter,
+627,628,Justice,Justice,
+628,629,Katharine,KATHARINE,daughter to Charles and Isabel
+629,630,Katharine,KATHARINE,lady attending on the princess
+630,631,Katherina,KATHERINA,the shrew
+631,632,Keeper,Keeper,
+632,633,Keeper,Keeper,
+633,634,Earl of Kent,,
+634,635,King of France,KING,
+635,636,King of France,France,
+636,637,King John,KING JOHN,king of England
+637,638,King Phillip,KING PHILIP,king of France
+638,639,Knight,Knight,
+639,640,Knights,Knights,
+640,641,Lady Anne,LADY ANNE,"widow of Edward Prince of Wales, son to King Henry VI; afterwards married to Richard III"
+641,642,Lady Capulet,LADY CAPULET,Wife to Capulet
+642,643,Lady,Lady,
+643,644,Lady Faulconbridge,LADY FAULCONBRIDGE,wife to Sir Robert Faulconbridge
+644,645,Lady,Lady,attending on the Queen
+645,646,Lady Macbeth,LADY MACBETH,
+646,647,Lady Macduff,LADY MACDUFF,
+647,648,Lady Montague,LADY MONTAGUE,Wife to Montague
+648,649,Lady Northumberland,LADY NORTHUMBERLAND,
+649,650,Lady Percy,LADY PERCY,
+650,651,Laertes,Laer,son to Polonius
+651,652,Lafeu,LAFEU,an old lord
+652,653,John of Lancaster,,son of King Henry IV
+653,654,Titus Lartius,TITUS,general against the Volscians
+654,655,Launce,LAUNCE,the like to Proteus
+655,656,Launcelot Gobbo,LAUNCELOT,"the clown, servant to Shylock"
+656,657,Lavinia,LAVINIA,
+657,658,Lawyer,Lawyer,
+658,659,Lear,Lear,King of Britain
+659,660,Le Beau,LE BEAU,a courtier attending upon Frederick
+660,661,Legate,Legate,
+661,662,Lennox,LENNOX,Nobleman of Scotland
+662,663,Leonardo,LEONARDO,servant to Bassiano
+663,664,Leonato,LEONATO,Governor of Messina
+664,665,Sicilius Leonatus,Sicilius Leonatus,an apparition
+665,666,Leonine,LEONINE,servant to Dionyza
+666,667,Leontes,LEONTES,king of Sicilia
+667,668,Lepidus,LEPIDUS,(Marcus Antonius Lepidus)
+668,669,Lewis,LEWIS,the Dauphin
+669,670,King Lewis XI,KING LEWIS XI,king of France
+670,671,Lieutenant,LIEUTENANT,to Aufidius
+671,672,Lieutenant,Lieutenant,of the Tower
+672,673,Ligarius,LIGARIUS,a conspirator against Caesar
+673,674,Lodovico,LODOVICO,Kinsman to Brabantio
+674,675,Longaville,LONGAVILLE,lord attending on the king
+675,676,Lord,LORD,
+676,677,Lord Berkeley,LORD BERKELEY,
+677,678,Lord Chamberlain,Chamberlain,
+678,679,Lord Chancellor,Chancellor,
+679,680,Lord Clifford,CLIFFORD,
+680,681,Lord,Lord,
+681,682,Lord Fitzwater,LORD FITZWATER,
+682,683,Lord Grey,GREY,son of Queen Elizabeth
+683,684,Lord,Lord,
+684,685,Lord Hastings,HASTINGS,
+685,686,Lord,Lord,
+686,687,Lord Lovel,LOVEL,
+687,688,Lord,Lord,
+688,689,Lord,Lord,
+689,690,Lord Marshal,LORD MARSHAL,
+690,691,Lord,Lord,
+691,692,Lord (Earl) Rivers,RIVERS,brother to Lady Gray (Queen Elizabeth)
+692,693,Lord Sands,SANDS,
+693,694,Lord Say,SAY,
+694,695,Lord Scales,SCALES,
+695,696,Lord Scroop,SCROOP,
+696,697,Lords,Lords,
+697,698,Lords,Lords,
+698,699,Lords,LORDS,
+699,700,Lord Stafford,STAFFORD,
+700,701,Lords,Lords,
+701,702,Lord,LORD,
+702,703,Lord Willoughby,LORD WILLOUGHBY,
+703,704,Lord,Lord,
+704,705,Lorenzo,LORENZO,in love with Jessica
+705,706,Sir Thomas Lovell,LOVELL,
+706,707,Luce,LUCE,servant to Adriana
+707,708,Lucentio,LUCENTIO,"son to Vincentio, in love with Bianca"
+708,709,Lucetta,LUCETTA,waiting-woman to Julia
+709,710,Luciana,LUCIANA,sister to Adriana
+710,711,Lucianus,Luc,
+711,712,Lucilius,LUCILIUS,servant to Timon
+712,713,Lucilius,LUCILIUS,friend to Brutus
+713,714,Lucilius' Servant,Lucilius' Servant,
+714,715,Lucio,LUCIO,a fantastic
+715,716,Lucius,LUCIUS,son to Titus Andronicus
+716,717,Lucius,LUCIUS,servant to Brutus
+717,718,Lucius,LUCIUS,flattering lord
+718,719,Lucullus,LUCULLUS,flattering lord
+719,720,Lychorida,LYCHORIDA,nurse to Marina
+720,721,Lymoges,AUSTRIA,duke of Austria
+721,722,Lysander,LYSANDER,in love with Hermia
+722,723,Lysimachus,LYSIMACHUS,governor of Mytilene
+723,724,Macbeth,MACBETH,General of the King's army
+724,725,Macduff,MACDUFF,Nobleman of Scotland
+725,726,Macmorris,MACMORRIS,
+726,727,Malcolm,MALCOLM,Son of Duncan
+727,728,Malvolio,MALVOLIO,steward to Olivia
+728,729,Mamillius,MAMILLIUS,young prince of Sicilia
+729,730,Man,Man,the Porter's man
+730,731,Marcellus,Mar,Officer
+731,732,Marcus Andronicus,MARCUS ANDRONICUS,"tribune of the people, and brother to Titus"
+732,733,Mardian,MARDIAN,"a eunuch, attendant on Cleopatra"
+733,734,Margarelon,MARGARELON,a bastard son of Priam
+734,735,Margaret,MARGARET,Gentlewoman attending on Hero
+735,736,Queen Margaret,Margaret,"daughter to Reignier, afterwards married to King Henry VI"
+736,737,Margaret Plantagenet,MARGARET PLANTAGENET,a young daughter of Clarence
+737,738,Maria,MARIA,Olivia's woman
+738,739,Maria,MARIA,lady attending on the princess
+739,740,Mariana,MARIANA,neighbor and friend to the widow
+740,741,Mariana,MARIANA,
+741,742,Marina,MARINA,daughter to Pericles and Thaisa
+742,743,Mariners,Mariners,
+743,744,Mariner,Mariner,
+744,745,Marquess of Montague,MONTAGUE,
+745,746,Marquis of Dorset,DORSET,son of Queen Elizabeth
+746,747,Marshal,Marshal,
+747,748,Sir Oliver Martext,MARTEXT,a vicar
+748,749,Martius,MARTIUS,son to Titus Andronicus
+749,750,Marullus,MARULLUS,a tribune
+750,751,Master,Master,
+751,752,Master-Gunner,Master-Gunner,of Orleans
+752,753,Master,Master,master of a ship
+753,754,Matthew Goffe,MATTHEW GOFFE,
+754,755,Mayor of Saint Alban's,Mayor,
+755,756,Lord Mayor of London,Mayor,
+756,757,Mayor of York,Mayor,
+757,758,Mecaenas,MECAENAS,friend to Caesar
+758,759,Melun,MELUN,a French Lord
+759,760,Menas,MENAS,friend to Caesar
+760,761,Menecrates,MENECRATES,friend to Pompey
+761,762,Menelaus,MENELAUS,Agamemnon's brother
+762,763,Menenius Agrippa,MENENIUS,friend to Coriolanus
+763,764,Menteith,MENTEITH,Nobleman of Scotland
+764,765,Mercade,MERCADE,lord attending on the princess of France
+765,766,Merchant,Merchant,
+766,767,Mercutio,MERCUTIO,"Kinsman to Escalus the prince, and friend to Romeo"
+767,768,Messala,MESSALA,friend to Brutus
+768,769,Messenger,Messenger,
+769,770,Messenger,Messenger,
+770,771,Messenger,Messenger,
+771,772,Messenger,Messenger,
+772,773,Messenger,MESSENGER,
+773,774,Messenger,Messenger,
+774,775,Messenger,Messenger,
+775,776,Messenger,Messenger,
+776,777,Messenger,Messenger,
+777,778,Messenger,Messenger,
+778,779,Messenger,Mess,
+779,780,Messenger,Messenger,
+780,781,Messenger,Messenger,
+781,782,Messenger,Mess,
+782,783,Messenger,Messenger,
+783,784,Messenger,Messenger,
+784,785,Messenger,Messenger,
+785,786,Messenger,Messenger,
+786,787,Messenger,Messenger,
+787,788,Messenger,Messenger,
+788,789,Messenger,Messenger,
+789,790,Messenger,Messenger,
+790,791,Messenger,MESSENGER,
+791,792,Metellus Cimber,Metellus Cimber,a conspirator against Caesar
+792,793,Michael,MICHAEL,a follower of Cade
+793,794,Miranda,MIRANDA,daughter to Prospero
+794,795,Mistress Ford,MISTRESS FORD,
+795,796,Mistress Overdone,MISTRESS OVERDONE,a bawd
+796,797,Mistress Page,MISTRESS PAGE,
+797,798,Montague,MONTAGUE,Head of the house of Montague
+798,799,Montano,MONTANO,Othello's predecessor in the government of Cyprus
+799,800,Montjoy,MONTJOY,a French herald
+800,801,Mopsa,MOPSA,a shepherdess
+801,802,Mortimer,MORTIMER,Earl of March
+802,803,Morton,MORTON,retainer of Northumberland
+803,804,Moth,MOTH,page to Armado
+804,805,Mother,Mother,an apparition
+805,806,Moth,MOTH,a fairy
+806,807,Ralph Mouldy,MOULDY,country soldier
+807,808,Lord Mowbray,MOWBRAY,
+808,809,Mustardseed,MUSTARDSEED,a fairy
+809,810,Mutius,MUTIUS,son to Titus Andronicus
+810,811,Myrmidons,MYRMIDONS,soldiers of Achilles in the Trojan war
+811,812,Nathaniel,NATHANIEL,a servingman
+812,813,Nerissa,NERISSA,Portia's maid-in-waiting
+813,814,Nestor,NESTOR,a Greek prince
+814,815,Nicholas,NICHOLAS,a servingman
+815,816,Nobleman,Nobleman,
+816,817,Norwegian Captain,Capt,
+817,818,Nurse,Nurse,Nurse to Juliet
+818,819,Nurse,Nurse,
+819,820,Nym,NYM,sharper attending on Falstaff
+820,821,Nymphs,Nymphs,presented by spirits
+821,822,Oberon,OBERON,king of the fairies
+822,823,Octavia,OCTAVIA,sister to Caesar and wife to Antony
+823,824,Octavius,OCTAVIUS,(Octavius Caesar)
+824,825,Officer,Officer,
+825,826,Officer,Officer,
+826,827,Officer,Officer,
+827,828,Officer,Officer,
+828,829,Old Athenian,Old Athenian,
+829,830,Old Gobbo,GOBBO,father to Launcelot
+830,831,Old Lady,Old Lady,friend to Anne Bullen
+831,832,Old Man,Old Man,tenant to Glouchester
+832,833,Old Man,Old Man,
+833,834,Old Shepherd,Shepherd,reputed father of Perdita
+834,835,Oliver,OLIVER,son of Sir Rowland de Boys
+835,836,Olivia,OLIVIA,
+836,837,Ophelia,Oph,daughter to Polonius
+837,838,Orlando,ORLANDO,son of Sir Rowland de Boys
+838,839,Duke of Orleans,ORLEANS,
+839,840,Orsino,DUKE ORSINO,Duke of Illyria
+840,841,Osric,Osr,courtier
+841,842,Ostler,Ostler,
+842,843,Oswald,Osw,steward to Goneril
+843,844,Othello,OTHELLO,A noble Moor in the service of the Ventian state
+844,845,Outlaws,Outlaws,
+845,846,First Page,FIRST PAGE,
+846,847,Second Page,SECOND PAGE,
+847,848,Page,Page,
+848,849,Page,PAGE,to Falstaff
+849,850,Page,Boy,a page to Gardiner
+850,851,Page,PAGE,a gentleman dwelling at Windsor
+851,852,Page,Page,
+852,853,Page,PAGE,Page to Paris
+853,854,Page,Page,
+854,855,Page,PAGE,
+855,856,Painter,Painter,
+856,857,Pandar,Pandar,
+857,858,Pandarus,PANDARUS,uncle to Cressida
+858,859,Panthino,PANTHINO,servant to Antonio
+859,860,Paris,PARIS,"A young nobleman, kinsman to Escalus the prince"
+860,861,Paris,PARIS,"son of Priam, king of Troy"
+861,862,Parolles,PAROLLES,a follower of Bertram
+862,863,Patience,PATIENCE,woman to Queen Katharine
+863,864,Patrician,A Patrician,
+864,865,Patroclus,PATROCLUS,a Greek prince
+865,866,Paulina,PAULINA,wife to Antigonus
+866,867,Peaseblossom,PEASEBLOSSOM,a fairy
+867,868,Pedant,PEDANT,
+868,869,Pembroke,PEMBROKE,earl of Pembroke
+869,870,Earl of Pembroke,PEMBROKE,
+870,871,Perdita,PERDITA,daughter to Leontes and Hermione
+871,872,Pericles,PERICLES,prince of Tyre
+872,873,Peter,PETER,Thomas Horner's man
+873,874,Peter of Pomfret,PETER,a prophet
+874,875,Peter,PETER,Servant to Julet's nurse
+875,876,Peter,PETER,a servingman
+876,877,Peto,PETO,
+877,878,Petruchio,PETRUCHIO,"a gentleman of Verona, a suitor to Katherina"
+878,879,Phebe,PHEBE,a shepherdess
+879,880,Philario,PHILARIO,"friend to Posthumus, an Italian."
+880,881,Philemon,PHILEMON,servant to Cerimon
+881,882,Philip the Bastard,BASTARD,illegitimate son of Sir Robert Faulconbridge
+882,883,Philip,PHILIP,a servingman
+883,884,Philo,PHILO,friend to Antony
+884,885,Philostrate,PHILOSTRATE,master of the revels to Theseus
+885,886,Philotus,PHILOTUS,servant to Timon's creditors
+886,887,Phrynia,PHRYNIA,mistress to Alcibiades
+887,888,Pinch,PINCH,a schoolmaster
+888,889,Pindarus,PINDARUS,servant to Cassius
+889,890,Pisanio,PISANIO,servant to Posthumus
+890,891,Pistol,PISTOL,
+891,892,Players,PLAYERS,
+892,893,Player,PLAYER,
+893,894,Poet,Poet,the voice of Shakespeare's poetry
+894,895,Poet,Poet,
+895,896,Poet,Poet,
+896,897,Edward Poins,POINS,
+897,898,Polixenes,POLIXENES,king of Bohemia
+898,899,Polonius,Pol,Lord Chamberlain
+899,900,Pompey,POMPEY,(Sextus Pompeius)
+900,901,Pompey,POMPEY,servant to Mistress Overdone
+901,902,Popilius,POPILIUS,(Popilius Lena)
+902,903,Porter,PORTER,
+903,904,Porter,Porter,
+904,905,Porter,Porter,door-keeper of the Council-chamber
+905,906,Porter,Porter,
+906,907,Portia,PORTIA,wife to Brutus
+907,908,Portia,PORTIA,a rich heiress
+908,909,Post,Post,
+909,910,Post,Post,
+910,911,Posthumus Leonatus,POSTHUMUS LEONATUS,"a gentleman, husband to Imogen"
+911,912,Priam,PRIAM,king of Troy
+912,913,Priest,Priest,
+913,914,Priest,Priest,
+914,915,Prince of Arragon,ARRAGON,suitor to Portia
+915,916,Prince Edward,PRINCE EDWARD,
+916,917,Prince Henry,PRINCE HENRY,son to King John
+917,918,Prince Humphrey,PRINCE HUMPHREY,of Goucester
+918,919,Prince John,LANCASTER,of Lancaster
+919,920,Prince of Morocco,MOROCCO,suitor to Portia
+920,921,Princes,Princes,
+921,922,Princess of France,PRINCESS,
+922,923,Proculeius,PROCULEIUS,friend to Caesar
+923,924,Prospero,PROSPERO,the rightful Duke of Milan
+924,925,Proteus,PROTEUS,a gentleman
+925,926,Provost,Provost,
+926,927,Publius,PUBLIUS,son to Marcus the Tribune
+927,928,Publius,PUBLIUS,Senator
+928,929,Puck,PUCK,or Robin Goodfellow
+929,930,Pursuivant,Pursuivant,
+930,931,Queen,QUEEN,wife to Cymbeline
+931,932,Queen Elinor,QUEEN ELINOR,mother to King John
+932,933,Queen Elizabeth,QUEEN ELIZABETH,"starts as Lady Grey, marries Edward IV"
+933,934,Queen Katharine,QUEEN KATHARINE,"wife to King Henry, afterwards divorced"
+934,935,Queen,QUEEN,
+935,936,Hostess Quickly,HOSTESS,hostess of a tavern in Eastcheap
+936,937,Quince,QUINCE,a carpenter
+937,938,Quintus,QUINTUS,son to Titus Andronicus
+938,939,Rambures,RAMBURES,French lord
+939,940,Reapers,Reapers,presented by spirits
+940,941,Regan,Reg,daughter to Lear
+941,942,Reignier,REIGNIER,"duke of Anjou, and titular king of Naples"
+942,943,Reynaldo,Rey,servant to Polonius
+943,944,King Richard II,KING RICHARD II,king of England
+944,945,Richard III,RICHARD3,"son of Richard Plantagenet, duke of York; was duke of Gloucester before enthronement"
+945,946,Richard Plantagenet (Duke of Gloucester),PLANTAGENET,"becomes duke of York in Henry VI, Part"
+946,947,Richard Plantagenet the Younger,RICHARD,
+947,948,Robin,ROBIN,page to Falstaff
+948,949,Roderigo,RODERIGO,A Venetian gentleman
+949,950,Roman Captain,Captain,
+950,951,Roman,Roman,
+951,952,Romeo,ROMEO,Son to Montague
+952,953,Rosalind,ROSALIND,daughter to the banished Duke
+953,954,Rosaline,ROSALINE,lady attending on the princess
+954,955,Rosencrantz,Ros,courtier
+955,956,Ross,ROSS,Nobleman of Scotland
+956,957,Lord Ross,LORD ROSS,
+957,958,Rugby,RUGBY,servant to Doctor Caius
+958,959,Rumour,RUMOUR,the Presenter
+959,960,Sailor,Sailor,
+960,961,Sailor,Sailor,
+961,962,Salanio,SALANIO,friend to Antonio and Bassiano
+962,963,Salarino,SALARINO,friend to Antonio and Bassiano
+963,964,Salerio,SALERIO,friend to Antonio and Bassiano
+964,965,Earl of Salisbury,SALISBURY,
+965,966,Salisbury,SALISBURY,earl of Salisbury
+966,967,Earl of Salisbury,EARL OF SALISBURY,
+967,968,Sampson,SAMPSON,Servant to Capulet
+968,969,Saturninus,SATURNINUS,"son to the late Emperor of Rome, and afterwards
+	declared Emperor"
+969,970,Scarus,SCARUS,friend to Antony
+970,971,Scout,Scout,
+971,972,Scribe,Scribe,
+972,973,Scrivener,Scrivener,
+973,974,Archbishop Scroop,ARCHBISHOP,Archbishop of York
+974,975,Captain,Captain,friend to Viola
+975,976,Sebastian,SEBASTIAN,brother to Viola
+976,977,Sebastian,SEBASTIAN,the King's brother
+977,978,Second Attendant,Second Attendant,
+978,979,Second Bandit,Second Bandit,
+979,980,Second Brother,Second Brother,an apparition
+980,981,Second British Captain,Second Captain,
+981,982,Second Carrier,Second Carrier,
+982,983,Second Citizen,Second Citizen,
+983,984,Second Citizen,Second Citizen,
+984,985,Second Citizen,Second Citizen,
+985,986,Second Commoner,Second Commoner,
+986,987,Second Fisherman,Second Fisherman,
+987,988,Second Gaoler,Second Gaoler,
+988,989,Second Gentleman,Second Gentleman,
+989,990,Second Gentleman,Second Gentleman,
+990,991,Second Gentleman,Second Gentleman,a gentleman of Cymbeline's court
+991,992,Second Gentleman,Second Gentleman,
+992,993,Second Gentleman,Second Gentleman,
+993,994,Second Gentleman,Second Gentleman,
+994,995,Second Gentleman,Second Gentleman,
+995,996,Second Guard,Second Guard,
+996,997,Second Herald,Second Herald,
+997,998,Second Keeper,Second Keeper,
+998,999,Second Knight,Second Knight,
+999,1000,Second Lady,Second Lady,
+1000,1001,Second Lord,Second Lord,
+1001,1002,Second Lord,Second Lord,
+1002,1003,Second Lord,SECOND LORD,
+1003,1004,Second Lord,Second Lord,a lord of Cymbeline's court
+1004,1005,Second Lord,Second Lord,
+1005,1006,Second Lord,Second Lord,
+1006,1007,Second Merchant,Second Merchant,indebted to Angelo
+1007,1008,Second Messenger,Second Messenger,
+1008,1009,Second Messenger,Second Messenger,
+1009,1010,Second Messenger,Second Messenger,
+1010,1011,Second Messenger,Second Messenger,
+1011,1012,Second Murderer,Second Murderer,
+1012,1013,Second Murderer,Second Murderer,
+1013,1014,Second Neighbour,Second Neighbour,
+1014,1015,Second Officer,Second Officer,
+1015,1016,Second Officer,Second Officer,
+1016,1017,Second Officer,Second Officer,
+1017,1018,Second Outlaw,Second Outlaw,
+1018,1019,Second Petitioner,Second Petitioner,
+1019,1020,Second Pirate,Second Pirate,
+1020,1021,Second 'Prentice,Second 'Prentice,
+1021,1022,Second Roman,Second Roman,
+1022,1023,Second Sailor,Second Sailor,
+1023,1024,Second Secretary,Second Secretary,to Wolsey
+1024,1025,Second Senator,Second Senator,
+1025,1026,Second Senator,Second Senator,
+1026,1027,Second Sentinel,Second Sentinel,
+1027,1028,Second Servant,Second Servant,
+1028,1029,Second Servant,Second Servant,
+1029,1030,Second Servant,Second Servant,
+1030,1031,Second Servant,Second Servant,
+1031,1032,Second Serviceman,Second Serviceman,
+1032,1033,Second Servingman,Second Servingman,
+1033,1034,Second Soldier,Second Soldier,
+1034,1035,Second Soldier,Second Soldier,
+1035,1036,Second Soldier,Second Soldier,
+1036,1037,Second Stranger,Second Stranger,
+1037,1038,Second Warder,Second Warder,
+1038,1039,Second Watchman,Second Watchman,
+1039,1040,Seleucus,SELEUCUS,attendant on Cleopatra
+1040,1041,Sempronius,SEMPRONIUS,kinsman to Titus
+1041,1042,Sempronius,SEMPRONIUS,flattering lord
+1042,1043,Senator,,A senator of Venice
+1043,1044,Senator,Senator,
+1044,1045,Sentinels,Sentinels,
+1045,1046,Sergeant,Sergeant,
+1046,1047,Sergeant,Sergeant,a sergeant-at-arms
+1047,1048,Sergeant,Sergeant,
+1048,1049,Servant,Servant,servant to Diomedes
+1049,1050,Servant,Servant,
+1050,1051,Servant 1,Serv1,
+1051,1052,First Servant,FIRST SERVANT,
+1052,1053,Servant 2,Serv2,
+1053,1054,Second Servant,SECOND SERVANT,
+1054,1055,Servant 3,Serv3,
+1055,1056,Third Servant,THIRD SERVANT,
+1056,1057,Servant,Servant,
+1057,1058,Servant,Servant,
+1058,1059,Servant,Servant,
+1059,1060,Servant,SERVANT,
+1060,1061,Servant,Servant,
+1061,1062,Servant,Servant,
+1062,1063,Servant,Servant,
+1063,1064,Servant,Servant,
+1064,1065,Servant,Servant,
+1065,1066,Servant,Servant,
+1066,1067,Servant,Servant,
+1067,1068,Servant,Servant,
+1068,1069,Servant,Servant,
+1069,1070,Servant,Servant,
+1070,1071,Servant,Servant,
+1071,1072,Servant,Servant,
+1072,1073,Servants,Servants,
+1073,1074,Servants,ALL SERVANTS,
+1074,1075,Servant,Servant,
+1075,1076,Servant,SERVANT,
+1076,1077,Servant,Servant,
+1077,1078,Servilius,SERVILIUS,servant to Timon
+1078,1079,Serving-Men,Serving-Men,
+1079,1080,Seventh Citizen,Seventh Citizen,
+1080,1081,Several Citizens,Several Citizens,
+1081,1082,Sexton,Sexton,
+1082,1083,Seyton,SEYTON,An officer attending on Macduff
+1083,1084,Simon Shadow,SHADOW,country soldier
+1084,1085,Robert Shallow,SHALLOW,country Justice
+1085,1086,Shepherd,Shepherd,father to Joan of Arc
+1086,1087,Sheriff,Sheriff,
+1087,1088,Sheriff,Sheriff,
+1088,1089,Sheriff of Wiltshire,Sheriff,
+1089,1090,Shylock,SHYLOCK,a rich Jew
+1090,1091,Sicinius Velutus,SICINIUS,tribune of the people
+1091,1092,Silence,SILENCE,country Justice
+1092,1093,Silius,SILIUS,an officer in Ventidius's army
+1093,1094,Silvia,SILVIA,beloved of Valentine
+1094,1095,Silvius,SILVIUS,daughter to the banished Duke
+1095,1096,Simonides,SIMONIDES,king of Pentapolis
+1096,1097,Simpcox,SIMPCOX,an imposter
+1097,1098,Simple,SIMPLE,servant to Slender
+1098,1099,Sir Hugh Evans,SIR HUGH EVANS,a Welsh parson
+1099,1100,Sir Hugh Mortimer,HUGH MORTIMER,uncle to the Duke of York
+1100,1101,Sir Humphrey Stafford,SIR HUMPHREY,brother to William Stafford
+1101,1102,Sir James Blount,Blount,
+1102,1103,Sir James Tyrrel,TYRREL,
+1103,1104,Sir John Fastolfe,FASTOLFE,
+1104,1105,Sir John Montgomery,MONTGOMERY,
+1105,1106,Sir John Mortimer,JOHN MORTIMER,uncle to the Duke of York
+1106,1107,Sir John Somerville,SOMERVILLE,
+1107,1108,Sir John Stanley,STANLEY,
+1108,1109,Sir Michael,SIR MICHAEL,a friend to the Archbishop of York
+1109,1110,Sir Nathaniel,SIR NATHANIEL,a curate
+1110,1111,Sir Richard Ratcliff,RATCLIFF,
+1111,1112,Sir Robert Brakenbury,BRAKENBURY,
+1112,1113,Sir Stephen Scroop,SIR STEPHEN SCROOP,
+1113,1114,Sir Thomas Gargrave,GARGRAVE,
+1114,1115,Sir Thomas Vaughan,VAUGHAN,
+1115,1116,Sir Walter Herbert,HERBERT,
+1116,1117,Sir William Catesby,CATESBY,
+1117,1118,Sir  William Glansdale,GLANSDALE,
+1118,1119,Sir William Lucy,LUCY,
+1119,1120,Sir William Stanley,STANLEY,called also Earl of Derby
+1120,1121,Siward,SIWARD,"Earl of Northumberland, general of English forces"
+1121,1122,Sixth Citizen,Sixth Citizen,
+1122,1123,Slender,SLENDER,cousin to Shallow
+1123,1124,Christopher Sly,SLY,a tinker
+1124,1125,Smith the Weaver,SMITH,a follower of Cade
+1125,1126,Snare,SNARE,a Sheriff's officer
+1126,1127,Snout,SNOUT,a tinker
+1127,1128,Snug,SNUG,a joiner
+1128,1129,Soldier,Soldier,
+1129,1130,Soldier,Soldier,
+1130,1131,Soldier,Soldier,
+1131,1132,Soldier,Soldier,
+1132,1133,Soldiers,Soldiers,
+1133,1134,Soldier,Soldier,
+1134,1135,Solinus,DUKE SOLINUS,Duke of Ephesus
+1135,1136,Some Others,Some Others,
+1136,1137,Duke/Earl of Somerset,SOMERSET,John Beaufort
+1137,1138,Some Speak,Some Speak,
+1138,1139,Son,Son,who has killed his father
+1139,1140,Son,Son,Macduff's son
+1140,1141,Soothsayer,Soothsayer,
+1141,1142,Soothsayer,Soothsayer,
+1142,1143,Soothsayer,Soothsayer,
+1143,1144,Speed,SPEED,a clownish servant to Valentine
+1144,1145,Spirit,Spirit,
+1145,1146,Starveling,STARVELING,a tailor
+1146,1147,Stephano,STEPHANO,servant to Portia
+1147,1148,Stephano,STEPHANO,a drunken butler
+1148,1149,Steward,Steward,servant to the Countess
+1149,1150,Strato,STRATO,servant to Brutus
+1150,1151,Earl of Surrey,,
+1151,1152,Surveyor,Surveyor,to the Duke of Buckingham
+1152,1153,Tailor,TAILOR,
+1153,1154,Lord Talbot/Earl of Shrewsbury,JOHN TALBOT,
+1154,1155,Tamora,TAMORA,
+1155,1156,Taurus,TAURUS,lieutenant-general to Caesar
+1156,1157,Doll Tearsheet,DOLL,
+1157,1158,Thaisa,THAISA,daughter to Simonides
+1158,1159,Thaliard,THALIARD,a lord of Antioch
+1159,1160,Thersites,THERSITES,a deformed and scurrilous Greek
+1160,1161,Theseus,THESEUS,Duke of Athens
+1161,1162,Thieves,Thieves,
+1162,1163,Third Bandit,Third Bandit,
+1163,1164,Third Citizen,Third Citizen,
+1164,1165,Third Citizen,Third Citizen,
+1165,1166,Third Citizen,Third Citizen,
+1166,1167,Third Fisherman,Third Fisherman,
+1167,1168,Third Gentleman,Third Gentleman,
+1168,1169,Third Gentleman,Third Gentleman,
+1169,1170,Third Guard,Third Guard,
+1170,1171,Third Knight,Third Knight,
+1171,1172,Third Lord,Third Lord,
+1172,1173,Third Lord,Third Lord,
+1173,1174,Third Lord,Third Lord,
+1174,1175,Third Lord,Third Lord,
+1175,1176,Third Messenger,Third Messenger,
+1176,1177,Third Neighbour,Third Neighbour,
+1177,1178,Third Officer,Third Officer,
+1178,1179,Third Outlaw,Third Outlaw,
+1179,1180,Third Pirate,Third Pirate,
+1180,1181,Third Roman,Third Roman,
+1181,1182,Third Senator,Third Senator,
+1182,1183,Third Servant,Third Servant,
+1183,1184,Third Serviceman,Third Serviceman,
+1184,1185,Third Servingman,Third Servingman,
+1185,1186,Third Soldier,Third Soldier,
+1186,1187,Third Soldier,Third Soldier,
+1187,1188,Third Stranger,Third Stranger,
+1188,1189,Third Watchman,Third Watchman,
+1189,1190,Thomas Mowbray,THOMAS MOWBRAY,Duke of Norfolk
+1190,1191,Prince Thomas,CLARENCE,Duke of Clarence
+1191,1192,Thomas Horner,HORNER,an armourer
+1192,1193,Thomas Rotherham,ARCHBISHOP OF YORK,archbishop of York
+1193,1194,Thurio,THURIO,a foolish rival to Valentine
+1194,1195,Thyreus,THYREUS,friend to Caesar
+1195,1196,Timandra,TIMANDRA,mistress to Alcibiades
+1196,1197,Time,Time,as the chorus
+1197,1198,Timon,TIMON,
+1198,1199,Tintinius,Tintinius,friend to Brutus
+1199,1200,Titania,TITANIA,queen of the fairies
+1200,1201,Titus Andronicus,TITUS ANDRONICUS,"a noble Roman, general against the Goths."
+1201,1202,Titus,TITUS,servant to Timon's creditors
+1202,1203,Touchstone,TOUCHSTONE,the court jester
+1203,1204,Townsman,Townsman,
+1204,1205,Tranio,TRANIO,
+1205,1206,Travellers,Travellers,
+1206,1207,Travers,TRAVERS,retainer of Northumberland
+1207,1208,Trebonius,TREBONIUS,a conspirator against Caesar
+1208,1209,Tressel,TRESSEL,a gentleman attending on Lady Anne
+1209,1210,Tribunes,Tribunes,
+1210,1211,Trinculo,TRINCULO,a jester
+1211,1212,Troilus,TROILUS,"son of Priam, king of Troy"
+1212,1213,Tubal,TUBAL,"a Jew, his friend"
+1213,1214,Tullus Aufidius,AUFIDIUS,general of the Vulscians
+1214,1215,Tutor of Rutland,Tutor,
+1215,1216,Tybalt,TYBALT,Nephew to Lady Capulet
+1216,1217,Tyrian Sailor,Tyrian Sailor,
+1217,1218,Ulysses,ULYSSES,a Greek prince
+1218,1219,Ursula,URSULA,Gentlewoman attending on Hero
+1219,1220,Valentine,VALENTINE,kinsman to Titus
+1220,1221,Valentine,VALENTINE,gentleman attending on the Duke
+1221,1222,Valentine,VALENTINE,a gentleman
+1222,1223,Valeria,VALERIA,friend to Virgilia
+1223,1224,Varrius,VARRIUS,friend to Pompey
+1224,1225,Varrius,VARRIUS,
+1225,1226,Varro,VARRO,servant to Brutus
+1226,1227,Varro's First Servant,Varro's First Servant,
+1227,1228,Varro's Second Servant,Varro's Second Servant,
+1228,1229,Sir Nicholas Vaux,VAUX,
+1229,1230,Vaux,VAUX,
+1230,1231,Ventidius,VENTIDIUS,one of Timon's false friends
+1231,1232,Ventidius,VENTIDIUS,friend to Antony
+1232,1233,Verges,VERGES,A headborough
+1233,1234,Vernon,VERNON,"of the White Rose, or York, faction"
+1234,1235,Vincentio,VINCENTIO,a merchant of Pisa
+1235,1236,Vincentio,DUKE VINCENTIO,the Duke
+1236,1237,Vintner,Vintner,
+1237,1238,Viola,VIOLA,
+1238,1239,Violenta,VIOLENTA,neighbor and friend to the widow
+1239,1240,Virgilia,VIRGILIA,wife to Coriolanus
+1240,1241,Volsce,Volsce,
+1241,1242,Voltemand,Volt,courtier
+1242,1243,Volumnia,VOLUMNIA,mother to Coriolanus
+1243,1244,Volumnius,VOLUMNIUS,friend to Brutus
+1244,1245,Walter Whitmore,WHITMORE,
+1245,1246,Thomas Wart,WART,country soldier
+1246,1247,Earl of Warwick,WARWICK,
+1247,1248,Watch,Watch,
+1248,1249,Watchman,Watchman,
+1249,1250,Earl of Westmoreland,WESTMORELAND,
+1250,1251,Widow,WIDOW,
+1251,1252,Widow,Widow,an old widow of Florence
+1252,1253,Simpcox's Wife,Wife,
+1253,1254,William,WILLIAM,"a country fellow, in love with Audrey"
+1254,1255,Williams,WILLIAMS,soldier in King Henry's army
+1255,1256,William Page,WILLIAM PAGE,"a boy, son to Page"
+1256,1257,William Stafford,WILLIAM STAFFORD,brother to Sir Humphrey Stafford
+1257,1258,Cardinal Wolsey,CARDINAL WOLSEY,
+1258,1259,Woodvile,WOODVILE,lieutenant of the Tower
+1259,1260,Earl of Worcester,EARL OF WORCESTER,
+1260,1261,(stage directions),xxx,
+1261,1262,Duke of York,YORK,cousin to the king
+1262,1263,Young Clifford,YOUNG CLIFFORD,
+1263,1264,Young Coriolanus,Young CORIOLANUS,son to Coriolanus
+1264,1265,Young Lucius,Young LUCIUS,son to Lucius
+1265,1266,Young Siward,YOUNG SIWARD,Siward's son
