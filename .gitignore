@@ -1,5 +1,5 @@
 # Project custom ignores
-**/data/
+#**/data/
 **/*_draft.*
 
 .DS_Store
