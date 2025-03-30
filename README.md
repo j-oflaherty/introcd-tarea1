@@ -1,6 +1,6 @@
-# Introducción a la Ciencia de Datos 2024
+# Introducción a la Ciencia de Datos 2025
 
-Este repositorio contiene las letras y notebooks de las tareas propuestas para la edición 2024 del curso de Introducción a la Ciencia de Datos.
+Este repositorio contiene las letras y notebooks de las tareas propuestas para la edición 2025 del curso de Introducción a la Ciencia de Datos.
 
 En general, el procedimiento para correr los notebooks es simplemente instalar los requerimientos y levantar el servidor de jupyter:
 ```sh
@@ -15,7 +15,7 @@ Se recomienda utilizar entornos virtuales para instalar los requerimientos de ca
 cd ruta/a/introCD/
 
 # Solo una vez, crea el entorno virtual en la carpeta ruta/a/introCD/.venv/
-python -m venv -prompt introcd .venv/ 
+python -m venv introcd .venv/ 
 
 # Cada vez que ingrese a la consola, puede activar este entorno corriendo (desde la carpeta introCD/):
 source .venv/bin/activate
