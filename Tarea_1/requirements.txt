@@ -1,6 +1,6 @@
 jupyter
 pandas
-sqlalchemy<2.0
-pymysql
 seaborn
 pillow
+networkx
+nltk
