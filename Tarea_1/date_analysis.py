@@ -17,7 +17,7 @@ df = df.explode("speaker")
 top5_speakers = df["speaker"].value_counts().head(5).index.tolist()
 if INCLUDE_OTHERS:
     df["speaker"] = df["speaker"].apply(
-        lambda x: "Other" if x not in top5_speakers else x
+        lambda x: "Otros" if x not in top5_speakers else x
     )
 else:
     df = df[df["speaker"].isin(top5_speakers)]
@@ -44,13 +44,13 @@ colores_por_candidato = {
     "Mike Pence": "#e96a6a",
     "Joe Biden": "#1f77b4",
     "Kamala Harris": "#4e9cd5",
-    "Other": "#949494",
+    "Otros": "#949494",
 }
 
 df_long = df_pivot.reset_index().melt(
     id_vars="week", var_name="speaker", value_name="speeches"
 )
-fig, ax = plt.subplots(figsize=(12, 8))
+fig, ax = plt.subplots(figsize=(10, 6))
 df_pivot.plot(
     kind="bar",
     stacked=True,
@@ -62,7 +62,7 @@ plt.grid(axis="y")
 plt.xlabel("Semana", fontsize=16)
 plt.ylabel("Cantidad de discursos", fontsize=16)
 plt.title("Discursos por semana", fontsize=18)
-plt.xticks(rotation=40, fontsize=12)
+plt.xticks(fontsize=12)
 plt.yticks(fontsize=12)
 plt.legend(title="Candidato", fontsize=14, title_fontsize=16)
 plt.tight_layout()
@@ -75,3 +75,5 @@ plt.savefig(
 )
 plt.show()
 plt.close()
+
+# %%
