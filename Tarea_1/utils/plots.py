@@ -47,8 +47,7 @@ def cicrle_packing_plot(ds: pd.Series, scale: int = 2, threshold: float = 0.15):
         ax.add_patch(
             plt.Circle((x, y), r, alpha=0.5, linewidth=2, fill=True, color=random_color)
         )
-
-        font_size = max(8, min(12, r * 20))
+        font_size = max(8, min(20, r * 40))
         speaker = speaker_names[i].replace(" ", "\n")
         if len(speaker) > 12 and r < 0.1:
             speaker = speaker[:12] + "..."
@@ -60,7 +59,7 @@ def cicrle_packing_plot(ds: pd.Series, scale: int = 2, threshold: float = 0.15):
             count = count_values[i]
             plt.text(
                 x,
-                y - font_size / 90,
+                y - font_size / 100,
                 f"({count})",
                 ha="center",
                 va="center",
