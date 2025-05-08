@@ -1,6 +1,7 @@
 # Importo los modulos necesarios
 import re
 import string
+import pandas as pd
 
 
 def clean_text(df, column_name):
@@ -21,15 +22,15 @@ def clean_text(df, column_name):
     return result
 
 
-def search_punctuation(df, column_name):
+def search_punctuation(df: pd.DataFrame, column_name: str) -> set:
     # Concatenar todos los textos en uno solo
     texto = ' '.join(df[f'{column_name}'])
 
     # Extraer todos los signos de puntuación
     signos = re.findall(f'[{re.escape(string.punctuation)}]', texto)
 
-    # Obtener un set ordenado de signos únicos encontrados
-    return sorted(set(signos))
+    # Obtener un set de signos únicos encontrados
+    return set(signos)
 
 
 def list_of_tuples(lista: list) -> list:

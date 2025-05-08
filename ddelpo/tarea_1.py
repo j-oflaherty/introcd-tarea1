@@ -1,13 +1,18 @@
 # Importamos los módulos a utilizar
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
 from ddelpo.clean_data import clean_text, search_punctuation, list_of_tuples
 from wordcloud import WordCloud, STOPWORDS
 import locale
-
+import re
+from ddelpo.network_graph import draw_labeled_multigraph
+import networkx as nx
+import numpy as np
+import itertools as it
 
 # DataFrame con todos los discursos
-df_speeches = pd.read_csv(r'data/us_2020_election_speeches.csv', sep=',')
+df_speeches = pd.read_csv(filepath_or_buffer=r'data/us_2020_election_speeches.csv', sep=',')
 
 # Tipos de datos
 print(df_speeches.dtypes)
@@ -73,6 +78,15 @@ df_speeches_2[['speaker', 'text']] = pd.DataFrame(
 # Chequeo con los index que la cantidad de discursos sigue siendo la misma
 print(len(df_speeches_2.index.unique()))
 
+# Ejemplo 1: Cuántos oradores intervienen en Multiple Speakers
+print(df_speeches_2.iloc[df_speeches[df_speeches['speaker'] == 'Multiple Speakers'].index].speaker.unique())
+
+# Ejemplo 2: Cuántos oradores intervienen en Democratic Candidates
+print(df_speeches_2.iloc[df_speeches[df_speeches['speaker'] == 'Democratic Candidates'].index].speaker.unique())
+
+# Ejemplo 3: Cuántos oradores intervienen en ???
+print(df_speeches_2.iloc[df_speeches[df_speeches['speaker'] == '???'].index].speaker.unique())
+
 # Quiero ver los candidatos que me quedaron
 df_speeches_2.to_excel(r'data/speeches.xlsx')
 
@@ -106,7 +120,6 @@ names = {
 }
 df_speeches_2['speaker'] = df_speeches_2['speaker'].map(names).fillna(df_speeches_2['speaker'])
 
-
 # Me quedo con las intervenciones del top 5
 df_speeches_top_5 = df_speeches_2[df_speeches_2['speaker'].isin(top_5)].copy()
 
@@ -126,9 +139,9 @@ df_speeches_top_5['party'] = df_speeches_top_5['speaker'].map(parties)
 # Para chequear escala temporal
 print(df_speeches_top_5['date'].min())
 print(df_speeches_top_5['date'].max())
-df_speeches_top_5['week'] = df_speeches_top_5['date'].dt.to_period('W').apply(lambda r: r.start_time)
+df_speeches_top_5['week'] = df_speeches_top_5['date'].dt.to_period('W').apply(lambda x: x.start_time)
 
-# Establecer el locale a español
+# Establecer a idioma español para que las fechas de las gráficas queden en ese idioma
 locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
 
 # TODO: Visualización de los discursos de cada candidato a lo largo del tiempo
@@ -151,7 +164,7 @@ df_pivot.plot(
     figsize=(14, 6)
 )
 plt.xlabel('Semana')
-plt.ylabel('Discursos')
+plt.ylabel('Cantidad de Discursos')
 plt.title('Discursos por Candidato en el Año 2020')
 plt.xticks(rotation=30)
 plt.legend(title='Candidato')
@@ -172,7 +185,7 @@ df_pivot.plot(
     figsize=(14, 6)
 )
 plt.xlabel('Semana')
-plt.ylabel('Discursos')
+plt.ylabel('Cantidad de Discursos')
 plt.title('Discursos por Partido Político en el Año 2020')
 plt.xticks(rotation=30)
 plt.legend(title='Partido')
@@ -181,13 +194,13 @@ plt.ioff()
 plt.savefig('img/discursos_partidos_por_semana.png', dpi=300, bbox_inches='tight')
 plt.close()
 
-# Busco los signos de puntuacion que existen para despues agregarlos a la funcion clean_text
-print(search_punctuation(df_speeches_top_5, 'text'))
+# Busco los signos de puntuación que existen para después agregarlos a la función clean_text
+print(search_punctuation(df=df_speeches_top_5, column_name='text'))
 
 # TODO: Creamos una nueva columna CleanText a partir de text
-df_speeches_top_5['clean_text'] = clean_text(df_speeches_top_5, 'text')
+df_speeches_top_5['clean_text'] = clean_text(df=df_speeches_top_5, column_name='text')
 
-# Convierte parrafos en listas 'palabra1 palabra2 palabra3' -> ['palabra1', 'palabra2', 'palabra3']
+# Convierte párrafos en listas 'palabra1 palabra2 palabra3' -> ['palabra1', 'palabra2', 'palabra3']
 df_speeches_top_5['word_list'] = df_speeches_top_5['clean_text'].str.split()
 
 # Veamos la nueva columna creada: notar que a la derecha tenemos una lista: [palabra1, palabra2, palabra3]
@@ -195,15 +208,24 @@ print(df_speeches_top_5[['clean_text', 'word_list']])
 
 # TODO: Realice una visualización que permita comparar las palabras más frecuentes de cada uno de los cinco candidatos/as.
 #   Encuentra algún problema en los resultados?
-df = df_speeches_top_5.groupby('speaker')['clean_text'].apply(lambda palabras: ' '.join(palabras)).reset_index()
-fig, axes = plt.subplots(nrows=1, ncols=5, figsize=(22, 5))
+df = df_speeches_top_5.groupby('speaker')['clean_text'].apply(lambda x: ' '.join(x)).reset_index()
+
+# Crear un colormap personalizado de rojo a azul
+us_cmap = LinearSegmentedColormap.from_list(name='us_flag', colors=['#d62728', '#1f77b4'])
+
+# Para eliminar palabras comunes del idioma que no aportan (agrego otras que no trae el módulo worldcloud)
+STOPWORDS.update(['s', 're', 'don', 'didn', 'know', 'will', 'going', 'need', 't', 'people', 'think', 'want', 'well', 'let', 'said', 'thank', 'one'])
+
+# Creo una nube por candidato con las 100 palabras más dichas
+fig, axes = plt.subplots(nrows=1, ncols=5, figsize=(25, 5))
 for i, row in df.iterrows():
     wc = WordCloud(
         width=400,
         height=400,
         background_color='white',
-        # Para eliminar palabras comunes del idioma que no aportan (agrego otras que no trae el módulo worldcloud)
-        stopwords=STOPWORDS.update(['s', 're', 'don', 'didn', 'know', 'will', 'going', 'need', 't', 'people', 'think', 'want', 'well', 'let', 'said', 'thank'])
+        colormap=us_cmap,
+        stopwords=STOPWORDS,
+        max_words=100
     ).generate(row['clean_text'])
     axes[i].imshow(wc, interpolation='bilinear')
     axes[i].axis('off')
@@ -217,7 +239,7 @@ plt.close()
 # Esas palabras quitan el foco de otras palabras que pueden indicar los tópicos que cada candidato considera más relevantes
 
 # TODO: Busque los candidatos/as con mayor cantidad de palabras.
-df_speeches_top_5['n_words'] = df_speeches_top_5['word_list'].apply(lambda palabras: len(palabras))
+df_speeches_top_5['n_words'] = df_speeches_top_5['word_list'].apply(lambda x: len(x))
 print(df_speeches_top_5.groupby('speaker')['n_words'].sum().sort_values(ascending=False))
 
 # Formas de mencionar a los candidatos
@@ -231,7 +253,36 @@ menciones = {
 
 # TODO: Construya una matriz de 5x5, donde cada fila y columna corresponden a un candiato/a,
 #   y la entrada (i,j) contiene la cantidad de veces que el candiato/a “i” menciona al candiato/a “j”.
-# mentions_matrix = ...
+mentions_matrix = pd.DataFrame(data=0, index=top_5, columns=top_5)
+for _, row in df.iterrows():
+    candidato = row['speaker']
+    discursos = row['clean_text']
+    for nombre_mencionado, patrones in menciones.items():
+        # Para evitar menciones a sí mismo
+        if nombre_mencionado == candidato:
+            continue
+
+        # Arranco la cuenta de los patrones de texto en los discursos
+        total = 0
+        for patron in patrones:
+            coincidencias = re.findall(patron, discursos)
+            total += len(coincidencias)
+
+        # Lo agrego a la matriz
+        mentions_matrix.loc[candidato, nombre_mencionado] = total
 
 # Opcional: Genere un grafo dirigido con esa matriz de adyacencia para visualizar las menciones.
-# Puede ser util la biblioteca networkx
+prod = list(it.product(top_5, repeat=2))
+prod = [t for t in prod if t[0] != t[1]]
+pair_dict = {'Menciones entre Candidatos': prod * i for i in range(1, 2)}
+
+fig, axes = plt.subplots(nrows=1, ncols=1)
+for (name, pairs), ax in zip(pair_dict.items(), np.ravel(axes)):
+    G = nx.MultiDiGraph()
+    for i, (u, v) in enumerate(pairs):
+        G.add_edge(u, v, w=mentions_matrix.loc[u, v])
+    draw_labeled_multigraph(G=G, attr_name='w', ax=ax)
+    ax.set_title(name)
+fig.tight_layout()
+plt.savefig('img/grafo_candidatos.png', dpi=300, bbox_inches='tight')
+plt.close()
