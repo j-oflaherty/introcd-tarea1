@@ -1,0 +1,9 @@
+jupyter
+pandas
+seaborn
+pillow
+networkx
+nltk
+circlify
+geopandas
+matplotlib
