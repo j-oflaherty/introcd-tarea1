@@ -6,10 +6,10 @@ from ddelpo.clean_data import clean_text, search_punctuation, list_of_tuples
 from wordcloud import WordCloud, STOPWORDS
 import locale
 import re
-from ddelpo.network_graph import draw_labeled_multigraph
-import networkx as nx
+# from ddelpo.network_graph import draw_labeled_multigraph
+# import networkx as nx
 import numpy as np
-import itertools as it
+# import itertools as it
 
 # DataFrame con todos los discursos
 df_speeches = pd.read_csv(filepath_or_buffer=r'data/us_2020_election_speeches.csv', sep=',')
@@ -78,13 +78,13 @@ df_speeches_2[['speaker', 'text']] = pd.DataFrame(
 # Chequeo con los index que la cantidad de discursos sigue siendo la misma
 print(len(df_speeches_2.index.unique()))
 
-# Ejemplo 1: Cuántos oradores intervienen en Multiple Speakers
+# Ejemplo 1: Cuántos oradores intervienen en 'Multiple Speakers'
 print(df_speeches_2.iloc[df_speeches[df_speeches['speaker'] == 'Multiple Speakers'].index].speaker.unique())
 
-# Ejemplo 2: Cuántos oradores intervienen en Democratic Candidates
+# Ejemplo 2: Cuántos oradores intervienen en 'Democratic Candidates'
 print(df_speeches_2.iloc[df_speeches[df_speeches['speaker'] == 'Democratic Candidates'].index].speaker.unique())
 
-# Ejemplo 3: Cuántos oradores intervienen en ???
+# Ejemplo 3: Cuántos oradores intervienen en '???'
 print(df_speeches_2.iloc[df_speeches[df_speeches['speaker'] == '???'].index].speaker.unique())
 
 # Quiero ver los candidatos que me quedaron
@@ -120,6 +120,11 @@ names = {
 }
 df_speeches_2['speaker'] = df_speeches_2['speaker'].map(names).fillna(df_speeches_2['speaker'])
 
+# Para chequear escala temporal
+print(df_speeches_2['date'].min())
+print(df_speeches_2['date'].max())
+df_speeches_2['week'] = df_speeches_2['date'].dt.to_period('W').apply(lambda x: x.start_time)
+
 # Me quedo con las intervenciones del top 5
 df_speeches_top_5 = df_speeches_2[df_speeches_2['speaker'].isin(top_5)].copy()
 
@@ -136,63 +141,79 @@ parties = {
 }
 df_speeches_top_5['party'] = df_speeches_top_5['speaker'].map(parties)
 
-# Para chequear escala temporal
-print(df_speeches_top_5['date'].min())
-print(df_speeches_top_5['date'].max())
-df_speeches_top_5['week'] = df_speeches_top_5['date'].dt.to_period('W').apply(lambda x: x.start_time)
-
 # Establecer a idioma español para que las fechas de las gráficas queden en ese idioma
 locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
+
+# Letra para que coincida con LaTex
+plt.rcParams.update({
+    'font.family': 'Latin Modern Roman',
+    'mathtext.fontset': 'cm',
+    'figure.titlesize': 18,
+    'axes.titlesize': 16,
+    'axes.labelsize': 14,
+    'xtick.labelsize': 12,
+    'ytick.labelsize': 12,
+    'legend.title_fontsize': 16,
+    'legend.fontsize': 14
+})
 
 # TODO: Visualización de los discursos de cada candidato a lo largo del tiempo
 df = df_speeches_top_5.groupby(['week', 'speaker']).apply(lambda x: x.index.nunique(), include_groups=False).reset_index(name='speeches').sort_values('week')
 df_pivot = df.pivot(index='week', columns='speaker', values='speeches').fillna(0)
+df_pivot = df_pivot[['Joe Biden', 'Kamala Harris', 'Bernie Sanders', 'Donald Trump', 'Mike Pence']]
 df_pivot.index = df_pivot.index.strftime('%b %d')
-# Tiene que estar en el mismo orden que las columnas
-colores_por_candidato = {
-    'Bernie Sanders': '#8fbadd',
-    'Donald Trump': '#d62728',
-    'Joe Biden': '#1f77b4',
-    'Kamala Harris': '#4e9cd5',
-    'Mike Pence': '#e96a6a'
-}
-plt.figure()
+fig, ax = plt.subplots(figsize=(14, 6))
 df_pivot.plot(
     kind='bar',
     stacked=True,
-    color=[colores_por_candidato[col] for col in df_pivot.columns],
-    figsize=(14, 6)
+    # Tiene que estar en el mismo orden que las columnas
+    color=['#1f77b4', '#4e9cd5', '#8fbadd', '#d62728',   '#e96a6a'],
+    ax=ax,
+    width=0.8
 )
-plt.xlabel('Semana')
-plt.ylabel('Cantidad de Discursos')
-plt.title('Discursos por Candidato en el Año 2020')
-plt.xticks(rotation=30)
-plt.legend(title='Candidato')
-plt.tight_layout()
-plt.ioff()
-plt.savefig('img/discursos_candidatos_por_semana.png', dpi=300, bbox_inches='tight')
-plt.close()
+fig.suptitle(t='Discursos por Candidato en el Año 2020', fontweight='bold')
+ax.set_xlabel('Semana')
+ax.set_xticklabels(ax.get_xticklabels(), rotation=30)
+ax.set_ylabel('Cantidad de Discursos')
+ax.set_ylim(bottom=0, top=24)
+ax.set_yticks(np.arange(0, 24, 2))
+ax.legend(title=None, loc='upper center', bbox_to_anchor=(0.5, 1.05), ncol=5, frameon=False)
+ax.yaxis.grid(visible=True, linestyle='--', alpha=0.6)
+ax.set_axisbelow(True)
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+fig.tight_layout()
+fig.savefig(fname='img/discursos_candidatos_por_semana.png', dpi=300, bbox_inches='tight')
+plt.close(fig)
 
 # Visualización de los discursos de cada partido a lo largo del tiempo
-df = df_speeches_top_5.groupby(['week', 'party']).apply(lambda x: x.index.nunique(), include_groups=False).reset_index(name='speeches').sort_values('week')
+df = df_speeches_top_5.groupby(['week', 'speaker', 'party']).apply(lambda x: x.index.nunique(), include_groups=False).reset_index(name='speeches').sort_values('week')
+df = df.groupby(['week', 'party']).agg({'speeches': 'sum'}).reset_index()
 df_pivot = df.pivot(index='week', columns='party', values='speeches').fillna(0)
 df_pivot.index = df_pivot.index.strftime('%b %d')
-plt.figure()
+fig, ax = plt.subplots(figsize=(14, 6))
 df_pivot.plot(
     kind='bar',
     stacked=True,
+    # Tiene que estar en el mismo orden que las columnas
     color=['#1f77b4', '#d62728'],
-    figsize=(14, 6)
+    ax=ax,
+    width=0.8
 )
-plt.xlabel('Semana')
-plt.ylabel('Cantidad de Discursos')
-plt.title('Discursos por Partido Político en el Año 2020')
-plt.xticks(rotation=30)
-plt.legend(title='Partido')
-plt.tight_layout()
-plt.ioff()
-plt.savefig('img/discursos_partidos_por_semana.png', dpi=300, bbox_inches='tight')
-plt.close()
+fig.suptitle(t='Discursos por Partido Político en el Año 2020', fontweight='bold')
+ax.set_xlabel('Semana')
+ax.set_xticklabels(ax.get_xticklabels(), rotation=30)
+ax.set_ylabel('Cantidad de Discursos')
+ax.set_ylim(bottom=0, top=24)
+ax.set_yticks(np.arange(0, 24, 2))
+ax.legend(title=None, loc='upper center', bbox_to_anchor=(0.5, 1.05), ncol=2, frameon=False)
+ax.yaxis.grid(visible=True, linestyle='--', alpha=0.6)
+ax.set_axisbelow(True)
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+fig.tight_layout()
+fig.savefig(fname='img/discursos_partidos_por_semana.png', dpi=300, bbox_inches='tight')
+plt.close(fig)
 
 # Busco los signos de puntuación que existen para después agregarlos a la función clean_text
 print(search_punctuation(df=df_speeches_top_5, column_name='text'))
@@ -217,7 +238,7 @@ us_cmap = LinearSegmentedColormap.from_list(name='us_flag', colors=['#d62728', '
 STOPWORDS.update(['s', 're', 'don', 'didn', 'know', 'will', 'going', 'need', 't', 'people', 'think', 'want', 'well', 'let', 'said', 'thank', 'one'])
 
 # Creo una nube por candidato con las 100 palabras más dichas
-fig, axes = plt.subplots(nrows=1, ncols=5, figsize=(25, 5))
+fig, ax = plt.subplots(nrows=1, ncols=5, figsize=(30, 6))
 for i, row in df.iterrows():
     wc = WordCloud(
         width=400,
@@ -227,13 +248,14 @@ for i, row in df.iterrows():
         stopwords=STOPWORDS,
         max_words=100
     ).generate(row['clean_text'])
-    axes[i].imshow(wc, interpolation='bilinear')
-    axes[i].axis('off')
-    axes[i].set_title(row['speaker'], fontsize=14)
-plt.tight_layout()
-plt.ioff()
-plt.savefig('img/wordcloud_por_candidato.png', dpi=300, bbox_inches='tight')
-plt.close()
+    ax[i].imshow(wc, interpolation='bilinear')
+    ax[i].axis('off')
+    ax[i].set_title(row['speaker'], fontsize=16)
+fig.suptitle(t='TOP 100 de Palabras más Utilizadas por Candidato', fontweight='bold', x=0.45, fontsize=18)
+fig.tight_layout()
+fig.subplots_adjust(right=0.9, left=0, bottom=0, top=0.85)
+fig.savefig(fname='img/wordcloud_por_candidato.png', dpi=300, bbox_inches='tight')
+plt.close(fig)
 
 # El problema en los resultados son las palabras comunes
 # Esas palabras quitan el foco de otras palabras que pueden indicar los tópicos que cada candidato considera más relevantes
@@ -272,17 +294,175 @@ for _, row in df.iterrows():
         mentions_matrix.loc[candidato, nombre_mencionado] = total
 
 # Opcional: Genere un grafo dirigido con esa matriz de adyacencia para visualizar las menciones.
-prod = list(it.product(top_5, repeat=2))
-prod = [t for t in prod if t[0] != t[1]]
-pair_dict = {'Menciones entre Candidatos': prod * i for i in range(1, 2)}
+# prod = list(it.product(top_5, repeat=2))
+# prod = [t for t in prod if t[0] != t[1]]
+# pair_dict = {'Menciones entre Candidatos': prod * i for i in range(1, 2)}
+# fig, axes = plt.subplots(nrows=1, ncols=1)
+# for (name, pairs), ax in zip(pair_dict.items(), np.ravel(axes)):
+#     G = nx.MultiDiGraph()
+#     for i, (u, v) in enumerate(pairs):
+#         G.add_edge(u, v, w=mentions_matrix.loc[u, v])
+#     draw_labeled_multigraph(G=G, attr_name='w', ax=ax)
+#     ax.set_title(name)
+# fig.tight_layout()
+# fig.savefig(fname='img/grafo_candidatos.png', dpi=300, bbox_inches='tight')
+# plt.close(fig)
 
-fig, axes = plt.subplots(nrows=1, ncols=1)
-for (name, pairs), ax in zip(pair_dict.items(), np.ravel(axes)):
-    G = nx.MultiDiGraph()
-    for i, (u, v) in enumerate(pairs):
-        G.add_edge(u, v, w=mentions_matrix.loc[u, v])
-    draw_labeled_multigraph(G=G, attr_name='w', ax=ax)
-    ax.set_title(name)
+# Creo la categoría Otros
+df_speeches_2['speaker_2'] = df_speeches_2['speaker'].apply(lambda x: 'Otros' if x not in top_5 else x)
+grp_otros = list(df_speeches_2.loc[df_speeches_2['speaker_2'] == 'Otros']['speaker'].unique())
+
+# Así saco lo que empiece con Speaker
+grp_otros = [nombre for nombre in grp_otros if not nombre.strip().startswith('Speaker')]
+
+# Así saco lo que tenga Moderator y Crowd
+grp_otros = [nombre for nombre in grp_otros if 'Moderator' not in nombre]
+grp_otros = [nombre for nombre in grp_otros if 'Crowd' not in nombre]
+
+# Lista de políticos identificados en el grupo Otros
+politicos = [
+    'Joe Biden',
+    'Kamala Harris',
+    'Bernie Sanders',
+    'Donald Trump',
+    'Mike Pence',
+    'Alex Padilla',
+    'Alexandria Ocasio-Cortez',
+    'Amy Klobuchar',
+    'Andrew Cuomo',
+    'Andrew Yang',
+    'Barack Obama',
+    'Ben Carson',
+    'Beto O’Rourke',
+    'Bill Clinton',
+    'Bob Casey',
+    'Brendan Boyle',
+    'Brenda Lawrence',
+    'Carol Moseley Braun',
+    'Catherine Cortez Masto',
+    'Cedric Richmond',
+    'Chuck Hagel',
+    'Chuck Schumer',
+    'Colin Allred',
+    'Colin Powell',
+    'Conor Lamb',
+    'Cory Booker',
+    'Cory Gardner',
+    'David Perdue',
+    'David Zuckerman',
+    'Debbie Mucarsel-Powell',
+    'Deb Haaland',
+    'Doug Ducey',
+    'Doug Jones',
+    'Donna Brazile',
+    'Donald Trump Jr.',
+    'Elise Stefanik',
+    'Elizabeth Warren',
+    'Eric Garcetti',
+    'Eric Trump',
+    'Filemon Vela',
+    'Gary Peters',
+    'Gavin Newsom',
+    'Gretchen Whitmer',
+    'Gwen Moore',
+    'Hillary Clinton',
+    'Ilhan Omar',
+    'Jamie Harrison',
+    'Joaquin Castro',
+    'Joe Gruters',
+    'John Carney',
+    'John Kerry',
+    'John Lynch',
+    'John McCain',
+    'John Kasich',
+    'Jon Meacham',
+    'Josh Holt',
+    'Karen Pence',
+    'Keisha Lance Bottoms',
+    'Kellyanne Conway',
+    'Kirsten Gillibrand',
+    'Kristi Noem',
+    'Lindsey Graham',
+    'Lisa Blunt Rochester',
+    'Lori Lightfoot',
+    'Madison Cawthorn',
+    'Malcolm Kenyatta',
+    'Mandela Barnes',
+    'Maria Cardona',
+    'Mark Meadows',
+    'Martha McSally',
+    'Matt Gaetz',
+    'Melania Trump',
+    'Melvin Carter',
+    'Michelle Lujan Grisham',
+    'Mike Bloomberg',
+    'Mike Pompeo',
+    'Mitch McConnell',
+    'Muriel Bowser',
+    'Nancy Pelosi',
+    'Ned Lamont',
+    'Nikki Fried',
+    'Nikki Haley',
+    'Pete Buttigieg',
+    'Phil Murphy',
+    'Pramila Jayapal',
+    'Rand Paul',
+    'Raphael Warnock',
+    'Ronna McDaniel',
+    'Ron DeSantis',
+    'Ron Kind',
+    'Ron Klain',
+    'Seth Moulton',
+    'Stacey Abrams',
+    'Steve Sisolak',
+    'Tammy Baldwin',
+    'Tammy Duckworth',
+    'Ted Kaufman',
+    'Ted Lieu',
+    'Thom Tillis',
+    'Tim Ryan',
+    'Tim Scott',
+    'Tom Carper',
+    'Tom Perez',
+    'Tom Steyer',
+    'Tulsi Gabbard',
+    'Val Demings',
+    'Veronica Escobar',
+    'Yvanna Cancela',
+    'Zoe Lofgren'
+]
+
+# Gráfico con la categoría Otros
+df = (
+    df_speeches_2[df_speeches_2['speaker'].isin(politicos)]
+    .groupby(['week', 'speaker_2'])
+    .apply(lambda x: x.index.nunique(), include_groups=False)
+    .reset_index(name='speeches')
+    .sort_values('week')
+)
+df_pivot = df.pivot(index='week', columns='speaker_2', values='speeches').fillna(0)
+df_pivot = df_pivot[['Joe Biden', 'Kamala Harris', 'Bernie Sanders', 'Donald Trump', 'Mike Pence', 'Otros']]
+df_pivot.index = df_pivot.index.strftime('%b %d')
+fig, ax = plt.subplots(figsize=(14, 6))
+df_pivot.plot(
+    kind='bar',
+    stacked=True,
+    # Tiene que estar en el mismo orden que las columnas
+    color=['#1f77b4', '#4e9cd5', '#8fbadd', '#d62728',   '#e96a6a', '#949494'],
+    ax=ax,
+    width=0.8
+)
+fig.suptitle(t='Discursos por Candidato en el Año 2020', fontweight='bold')
+ax.set_xlabel('Semana')
+ax.set_xticklabels(ax.get_xticklabels(), rotation=30)
+ax.set_ylabel('Cantidad de Discursos')
+ax.set_ylim(bottom=0, top=44)
+ax.set_yticks(np.arange(0, 44, 4))
+ax.legend(title=None, loc='upper center', bbox_to_anchor=(0.5, 1.1), ncol=6, frameon=False)
+ax.yaxis.grid(visible=True, linestyle='--', alpha=0.6)
+ax.set_axisbelow(True)
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
 fig.tight_layout()
-plt.savefig('img/grafo_candidatos.png', dpi=300, bbox_inches='tight')
-plt.close()
+fig.savefig(fname='img/discursos_candidatos_por_semana_2.png', dpi=300, bbox_inches='tight')
+plt.close(fig)

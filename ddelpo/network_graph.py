@@ -7,7 +7,7 @@ def draw_labeled_multigraph(G, attr_name, ax=None):
     """
     The length of connectionstyle must be at least that of a maximum number of edges
     between a pair of nodes. This number is maximum one-sided connections
-    for directed graph and maximum total connections for undirected graph.
+    for the directed graph and maximum total connections for the undirected graph.
     """
     # Works with arc3 and angle3 connectionstyles
     connectionstyle = [f"arc3,rad={r}" for r in it.accumulate([0.15] * 4)]
@@ -15,7 +15,7 @@ def draw_labeled_multigraph(G, attr_name, ax=None):
 
     pos = nx.shell_layout(G)
     nx.draw_networkx_nodes(G, pos, ax=ax)
-    nx.draw_networkx_labels(G, pos, font_size=12, ax=ax)
+    nx.draw_networkx_labels(G, pos, ax=ax)
     nx.draw_networkx_edges(
         G,
         pos,
