@@ -153,6 +153,7 @@ df_top5_speakers["candidate_affiliation"] = df_top5_speakers["speaker"].map(
     lambda x: candidate_affiliation[x]
 )
 df_top5_speakers.head()
+# %%
 
 # %%
 from geopandas import read_file
@@ -168,6 +169,7 @@ df_party_speech_by_state = (
     .unstack()
     .fillna(0)
 )
+# %%
 
 
 def get_winner(row):
@@ -278,3 +280,18 @@ plt.savefig("img/news_channel_dist.png", dpi=300)
 plt.show()
 
 # %%
+df_top5_speakers.head()
+# %%
+df_top5_speakers.head()
+# %%
+df_top5_speakers = df[df["speaker"].isin(top5_speakers)].copy()
+df_top5_speakers["candidate_affiliation"] = df_top5_speakers["speaker"].map(
+    lambda x: candidate_affiliation[x]
+)
+# %%
+print("Virtual ", df_top5_speakers["news_channel"].notnull().sum())
+print("State ", df_top5_speakers["state"].notnull().sum())
+# %%
+df_top5_speakers[
+    (df_top5_speakers["news_channel"].isnull()) & (df_top5_speakers["state"].isnull())
+].count()
