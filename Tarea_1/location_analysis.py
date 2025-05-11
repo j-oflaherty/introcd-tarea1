@@ -4,6 +4,19 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import start_research
 
+plt.rcParams.update(
+    {
+        "font.family": "Latin Modern Roman",
+        "mathtext.fontset": "cm",
+        "figure.titlesize": 18,
+        "axes.titlesize": 16,
+        "axes.labelsize": 14,
+        "xtick.labelsize": 12,
+        "ytick.labelsize": 12,
+        "legend.title_fontsize": 16,
+        "legend.fontsize": 14,
+    }
+)
 # %%
 df = pd.read_csv("data/us_2020_election_speeches.csv")
 df["date"] = pd.to_datetime(df["date"])
@@ -210,7 +223,6 @@ for idx, row in all_states.dropna(subset=["winner"]).iterrows():
         x, y = row["geometry"].centroid.x, row["geometry"].centroid.y
         # Apply offset if state is in offsets dict
         dx, dy = offsets.get(row["name"], (0, 0))
-        print(row["name"], dx, dy)
         label = f"{row['dem_count']}/{row['rep_count']}"
         text = plt.text(
             x + dx,
@@ -254,6 +266,7 @@ df_top5_speakers_news_channel.groupby(
 ).size().unstack().fillna(0).plot(
     kind="bar", stacked=True, color=list(color_map.values())
 )
+plt.grid(which="major", axis="y", alpha=0.5)
 plt.title("Distribución de discursos por partido y canal de noticias")
 plt.legend(title="Partido", title_fontsize=12, fontsize=11)
 plt.xticks(rotation=0, ha="center", fontsize=11)
