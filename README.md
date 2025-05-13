@@ -24,7 +24,9 @@ Luego, es necesario instalar las dependencias.
 pip install -r requirements.txt
 ```
 
-Para generar todas las imágenes, es necesario ejecutar el siguiente comando.
+Para generar todas las imágenes, es necesario ejecutar el siguiente comando. Las imágenes quedarán guardadas en la carpeta `img` del proyecto.
 ```bash
-python ddelpo/tarea_1.py
+python utils/tarea_1.py
 ```
+
+Este script es el que orquesta toda la tarea en general. El script `clean_data.py` contiene funciones para limpiar texto. El script `plots.py` contiene los gráficos. Y el script `location_analysis.py` tiene un análisis de la columna `location` del set de datos.

@@ -7,3 +7,5 @@ nltk
 circlify
 geopandas
 matplotlib
+wordcloud
+numpy

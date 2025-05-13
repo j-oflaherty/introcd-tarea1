@@ -1,19 +1,28 @@
-# Importamos los módulos a utilizar
+# %% Importamos los módulos a utilizar
 import pandas as pd
-import seaborn as sns
-from circlify import circlify
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
-from ddelpo.clean_data import clean_text, search_punctuation, list_of_tuples
-from wordcloud import WordCloud, STOPWORDS
+from utils.clean_data import clean_text, search_punctuation, list_of_tuples, get_state
+from wordcloud import STOPWORDS
 import locale
 import re
-# from ddelpo.network_graph import draw_labeled_multigraph
-import networkx as nx
-import numpy as np
-# import itertools as it
+from utils.plots import circle_packing_plot, stacked_bar_plot, word_cloud_plot, directed_graph_plot
+from utils.location_analysis import execute as execute_location_analysis
 
-# DataFrame con todos los discursos
+# %% Letra para que coincida con LaTex
+plt.rcParams.update({
+    'font.family': 'Latin Modern Roman',
+    'mathtext.fontset': 'cm',
+    'figure.titlesize': 18,
+    'axes.titlesize': 16,
+    'axes.labelsize': 14,
+    'xtick.labelsize': 12,
+    'ytick.labelsize': 12,
+    'legend.title_fontsize': 16,
+    'legend.fontsize': 14
+})
+
+# %% DataFrame con todos los discursos
 df_speeches = pd.read_csv(filepath_or_buffer=r'data/us_2020_election_speeches.csv', sep=',')
 
 # Tipos de datos
@@ -30,64 +39,16 @@ print(df_speeches.groupby('type').size().sort_values(ascending=False))
 # La mayoría fueron virtuales por el COVID-19
 print(df_speeches.groupby('location').size().sort_values(ascending=False))
 
-# TODO: Analice la cantidad de discursos por candidato
+# %% Analice la cantidad de discursos por candidato
 n_speeches = df_speeches.groupby('speaker').size().sort_values(ascending=False)
 
 # Quiero ver todos los oradores
 print(df_speeches.speaker.unique())
 
-# Gráfico de burbujas con la cantidad de discursos por candidato
-circles = circlify(list(n_speeches))
-circles = circles[::-1]
+# %% Gráfico de burbujas con la cantidad de discursos por candidato
+circle_packing_plot(ds=n_speeches, save_path='img/speaker_analysis.png')
 
-fig, ax = plt.subplots(figsize=(10, 10))
-ax.axis('off')
-
-lim = max(
-    max(
-        abs(circle.x * 2) + circle.r * 2,
-        abs(circle.y * 2) + circle.r * 2,
-    )
-    for circle in circles
-)
-
-ax.set_xlim(-lim, lim)
-ax.set_ylim(-lim, lim)
-color_palette = sns.color_palette(palette='tab10', n_colors=20)
-
-for i, circle in enumerate(circles):
-    x, y, r = circle
-    x = x * 2
-    y = y * 2
-    r = r * 2
-    color_idx = i % len(color_palette)
-    random_color = color_palette[color_idx]
-    ax.add_patch(
-        plt.Circle(xy=(x, y), radius=r, alpha=0.5, linewidth=2, fill=True, color=random_color)
-    )
-    font_size = max(8, min(20, r * 40))
-    speaker = list(n_speeches.index)[i].replace(' ', '\n')
-    if len(speaker) > 12 and r < 0.1:
-        speaker = speaker[:12] + '...'
-
-    ax.text(x=x, y=y, s=speaker, ha='center', va='center', fontsize=font_size)
-    if r > 0.15:
-        count = list(n_speeches)[i]
-        ax.text(
-            x=x,
-            y=y - font_size / 100,
-            s=f'({count})',
-            ha='center',
-            va='center',
-            fontsize=font_size * 0.8,
-            alpha=0.8,
-        )
-
-fig.tight_layout()
-fig.savefig(fname='img/speaker_analysis.png', dpi=300, bbox_inches='tight')
-plt.close(fig)
-
-# Veo que hay discursos donde hay más de un candidato en la columna 'speaker'
+# %% Veo que hay discursos donde hay más de un candidato en la columna 'speaker'
 # Como veo que están los nombres separados por ',' quiero ver si es significativa la cantidad de registros
 print(len(df_speeches[df_speeches['speaker'].str.contains(',', na=False)]))
 
@@ -96,7 +57,7 @@ print(len(df_speeches[df_speeches['speaker'] == 'Multiple Speakers']))
 print(len(df_speeches[df_speeches['speaker'] == 'Democratic Candidates']))
 print(len(df_speeches[df_speeches['speaker'] == '???']))
 
-# Hay 36 registros en los que no es posible determinar el orador por la columna 'speaker'
+# %% Hay 31 registros en los que no es posible determinar el orador por la columna 'speaker'
 # Voy a generar un DataFrame cuya estructura sea una fila por intervención de cada orador
 # Es decir que un discurso va a tener más de una fila
 df_speeches_2 = df_speeches.copy()
@@ -131,19 +92,26 @@ df_speeches_2[['speaker', 'text']] = pd.DataFrame(
 # Chequeo con los index que la cantidad de discursos sigue siendo la misma
 print(len(df_speeches_2.index.unique()))
 
-# Ejemplo 1: Cuántos oradores intervienen en 'Multiple Speakers'
-print(df_speeches_2.iloc[df_speeches[df_speeches['speaker'] == 'Multiple Speakers'].index].speaker.unique())
+# %% Ejemplo 1: Cuántos oradores intervienen en 'Multiple Speakers'
+for i in df_speeches[df_speeches['speaker'] == 'Multiple Speakers'].index:
+    print(len(df_speeches_2.loc[i].speaker.unique()))
 
-# Ejemplo 2: Cuántos oradores intervienen en 'Democratic Candidates'
-print(df_speeches_2.iloc[df_speeches[df_speeches['speaker'] == 'Democratic Candidates'].index].speaker.unique())
+# %% Ejemplo 2: Cuántos oradores intervienen en 'Democratic Candidates'
+for i in df_speeches[df_speeches['speaker'] == 'Democratic Candidates'].index:
+    print(len(df_speeches_2.loc[i].speaker.unique()))
 
-# Ejemplo 3: Cuántos oradores intervienen en '???'
-print(df_speeches_2.iloc[df_speeches[df_speeches['speaker'] == '???'].index].speaker.unique())
+# %% Ejemplo 3: Cuántos oradores intervienen en '???'
+for i in df_speeches[df_speeches['speaker'] == '???'].index:
+    print(len(df_speeches_2.loc[i].speaker.unique()))
 
-# Quiero ver los candidatos que me quedaron
-df_speeches_2.to_excel(r'data/speeches.xlsx')
+# %% Ejemplo 4: Cuántos oradores intervienen en NaN
+for i in df_speeches[df_speeches['speaker'].isna()].index:
+    print(len(df_speeches_2.loc[i].speaker.unique()))
 
-# Top 5 candidatos con más discursos
+# %% Quiero ver los candidatos que me quedaron
+# df_speeches_2.to_excel(r'data/speeches.xlsx')
+
+# %% Top 5 candidatos con más discursos
 top_5 = list(n_speeches.head(5).index)
 
 # Quiero ver como aparecen los 5 principales candidatos
@@ -173,18 +141,18 @@ names = {
 }
 df_speeches_2['speaker'] = df_speeches_2['speaker'].map(names).fillna(df_speeches_2['speaker'])
 
-# Para chequear escala temporal
+# %% Para chequear escala temporal
 print(df_speeches_2['date'].min())
 print(df_speeches_2['date'].max())
 df_speeches_2['week'] = df_speeches_2['date'].dt.to_period('W').apply(lambda x: x.start_time)
 
-# Me quedo con las intervenciones del top 5
+# %% Me quedo con las intervenciones del top 5
 df_speeches_top_5 = df_speeches_2[df_speeches_2['speaker'].isin(top_5)].copy()
 
-# Datos faltantes
+# %% Datos faltantes
 print(df_speeches_top_5.isna().sum())
 
-# Asignar partido politico
+# %% Asignar partido politico
 parties = {
     'Joe Biden': 'Partido Demócrata',
     'Kamala Harris': 'Partido Demócrata',
@@ -194,23 +162,10 @@ parties = {
 }
 df_speeches_top_5['party'] = df_speeches_top_5['speaker'].map(parties)
 
-# Establecer a idioma español para que las fechas de las gráficas queden en ese idioma
+# %% Establecer a idioma español para que las fechas de las gráficas queden en ese idioma
 locale.setlocale(locale.LC_TIME, locale='es_ES.UTF-8')
 
-# Letra para que coincida con LaTex
-plt.rcParams.update({
-    'font.family': 'Latin Modern Roman',
-    'mathtext.fontset': 'cm',
-    'figure.titlesize': 18,
-    'axes.titlesize': 16,
-    'axes.labelsize': 14,
-    'xtick.labelsize': 12,
-    'ytick.labelsize': 12,
-    'legend.title_fontsize': 16,
-    'legend.fontsize': 14
-})
-
-# TODO: Visualización de los discursos de cada candidato a lo largo del tiempo
+# %% Visualización de los discursos de cada candidato a lo largo del tiempo
 df = (
     df_speeches_top_5
     .groupby(['week', 'speaker'])
@@ -221,73 +176,29 @@ df = (
 df_pivot = df.pivot(index='week', columns='speaker', values='speeches').fillna(0)
 df_pivot = df_pivot[['Joe Biden', 'Kamala Harris', 'Bernie Sanders', 'Donald Trump', 'Mike Pence']]
 df_pivot.index = df_pivot.index.strftime('%b %d')
-fig, ax = plt.subplots(figsize=(14, 6))
-df_pivot.plot(
-    kind='bar',
-    stacked=True,
-    # Tiene que estar en el mismo orden que las columnas
-    color=['#1f77b4', '#4e9cd5', '#8fbadd', '#d62728',   '#e96a6a'],
-    ax=ax,
-    width=0.8
+stacked_bar_plot(
+    df=df_pivot,
+    save_path='img/discursos_candidatos_por_semana.png',
+    color=['#1f77b4', '#4e9cd5', '#8fbadd', '#d62728', '#e96a6a'],
+    plot_title='Discursos por Candidato en el Año 2020',
+    xlabel='Semana',
+    ylabel='Cantidad de Discursos',
+    ylim_top=24
 )
-fig.suptitle(t='Discursos por Candidato en el Año 2020', fontweight='bold')
-ax.set_xlabel('Semana')
-ax.set_xticklabels(ax.get_xticklabels(), rotation=30)
-ax.set_ylabel('Cantidad de Discursos')
-ax.set_ylim(bottom=0, top=24)
-ax.set_yticks(np.arange(0, 24, 2))
-ax.legend(title=None, loc='upper center', bbox_to_anchor=(0.5, 1.05), ncol=5, frameon=False)
-ax.yaxis.grid(visible=True, linestyle='--', alpha=0.6)
-ax.set_axisbelow(True)
-ax.spines['top'].set_visible(False)
-ax.spines['right'].set_visible(False)
-fig.tight_layout()
-fig.savefig(fname='img/discursos_candidatos_por_semana.png', dpi=300, bbox_inches='tight')
-plt.close(fig)
 
-# Visualización de los discursos de cada partido a lo largo del tiempo
-# df = df_speeches_top_5.groupby(['week', 'speaker', 'party']).apply(lambda x: x.index.nunique(), include_groups=False).reset_index(name='speeches').sort_values('week')
-# df = df.groupby(['week', 'party']).agg({'speeches': 'sum'}).reset_index()
-# df_pivot = df.pivot(index='week', columns='party', values='speeches').fillna(0)
-# df_pivot.index = df_pivot.index.strftime('%b %d')
-# fig, ax = plt.subplots(figsize=(14, 6))
-# df_pivot.plot(
-#     kind='bar',
-#     stacked=True,
-#     # Tiene que estar en el mismo orden que las columnas
-#     color=['#1f77b4', '#d62728'],
-#     ax=ax,
-#     width=0.8
-# )
-# fig.suptitle(t='Discursos por Partido Político en el Año 2020', fontweight='bold')
-# ax.set_xlabel('Semana')
-# ax.set_xticklabels(ax.get_xticklabels(), rotation=30)
-# ax.set_ylabel('Cantidad de Discursos')
-# ax.set_ylim(bottom=0, top=24)
-# ax.set_yticks(np.arange(0, 24, 2))
-# ax.legend(title=None, loc='upper center', bbox_to_anchor=(0.5, 1.05), ncol=2, frameon=False)
-# ax.yaxis.grid(visible=True, linestyle='--', alpha=0.6)
-# ax.set_axisbelow(True)
-# ax.spines['top'].set_visible(False)
-# ax.spines['right'].set_visible(False)
-# fig.tight_layout()
-# fig.savefig(fname='img/discursos_partidos_por_semana.png', dpi=300, bbox_inches='tight')
-# plt.close(fig)
-
-# Busco los signos de puntuación que existen para después agregarlos a la función clean_text
+# %% Busco los signos de puntuación que existen para después agregarlos a la función clean_text
 print(search_punctuation(df=df_speeches_top_5, column_name='text'))
 
-# TODO: Creamos una nueva columna CleanText a partir de text
+# %% Creamos una nueva columna CleanText a partir de text
 df_speeches_top_5['clean_text'] = clean_text(df=df_speeches_top_5, column_name='text')
 
-# Convierte párrafos en listas 'palabra1 palabra2 palabra3' -> ['palabra1', 'palabra2', 'palabra3']
+# %% Convierte párrafos en listas 'palabra1 palabra2 palabra3' -> ['palabra1', 'palabra2', 'palabra3']
 df_speeches_top_5['word_list'] = df_speeches_top_5['clean_text'].str.split()
 
 # Veamos la nueva columna creada: notar que a la derecha tenemos una lista: [palabra1, palabra2, palabra3]
 print(df_speeches_top_5[['clean_text', 'word_list']])
 
-# TODO: Realice una visualización que permita comparar las palabras más frecuentes de cada uno de los cinco candidatos/as.
-#   Encuentra algún problema en los resultados?
+# %% Realice una visualización que permita comparar las palabras más frecuentes de cada uno de los cinco candidatos/as.
 df = df_speeches_top_5.groupby('speaker')['clean_text'].apply(lambda x: ' '.join(x)).reset_index()
 
 # Crear un colormap personalizado de rojo a azul
@@ -296,34 +207,26 @@ us_cmap = LinearSegmentedColormap.from_list(name='us_flag', colors=['#d62728', '
 # Para eliminar palabras comunes del idioma que no aportan (agrego otras que no trae el módulo worldcloud)
 STOPWORDS.update(['s', 're', 'don', 'didn', 'know', 'will', 'going', 'need', 't', 'people', 'think', 'want', 'well', 'let', 'said', 'thank', 'one'])
 
-# Creo una nube por candidato con las 100 palabras más dichas
-fig, ax = plt.subplots(nrows=1, ncols=5, figsize=(30, 6))
-for i, row in df.iterrows():
-    wc = WordCloud(
-        width=400,
-        height=400,
-        background_color='white',
-        colormap=us_cmap,
-        stopwords=STOPWORDS,
-        max_words=100
-    ).generate(row['clean_text'])
-    ax[i].imshow(wc, interpolation='bilinear')
-    ax[i].axis('off')
-    ax[i].set_title(row['speaker'], fontsize=16)
-fig.suptitle(t='TOP 100 de Palabras más Utilizadas por Candidato', fontweight='bold', x=0.45, fontsize=18)
-fig.tight_layout()
-fig.subplots_adjust(right=0.9, left=0, bottom=0, top=0.85)
-fig.savefig(fname='img/wordcloud_por_candidato.png', dpi=300, bbox_inches='tight')
-plt.close(fig)
+# %% Creo una nube por candidato con las 100 palabras más dichas
+word_cloud_plot(
+    df=df,
+    save_path='img/wordcloud_por_candidato.png',
+    plot_title='TOP 100 de Palabras más Utilizadas por Candidato',
+    colormap=us_cmap,
+    stopwords=STOPWORDS,
+    max_words=100,
+    text='clean_text',
+    speaker='speaker'
+)
 
 # El problema en los resultados son las palabras comunes
 # Esas palabras quitan el foco de otras palabras que pueden indicar los tópicos que cada candidato considera más relevantes
 
-# TODO: Busque los candidatos/as con mayor cantidad de palabras.
+# %% Busque los candidatos/as con mayor cantidad de palabras.
 df_speeches_top_5['n_words'] = df_speeches_top_5['word_list'].apply(lambda x: len(x))
 print(df_speeches_top_5.groupby('speaker')['n_words'].sum().sort_values(ascending=False))
 
-# Formas de mencionar a los candidatos
+# %% Formas de mencionar a los candidatos
 menciones = {
     'Joe Biden': [r'\bjoe biden\b', r'\bbiden\b', r'\bvice president biden\b', r'\bvice president joe biden\b'],
     'Donald Trump': [r'\bdonald trump\b', r'\btrump\b', r'\bpresident trump\b', r'\bpresident donald\b', r'\bdonald\b'],
@@ -332,8 +235,8 @@ menciones = {
     'Kamala Harris': [r'\bkamala harris\b', r'\bharris\b', r'\bsenator harris\b', r'\bkamala\b']
 }
 
-# TODO: Construya una matriz de 5x5, donde cada fila y columna corresponden a un candiato/a,
-#   y la entrada (i,j) contiene la cantidad de veces que el candiato/a “i” menciona al candiato/a “j”.
+# Construya una matriz de 5x5, donde cada fila y columna corresponden a un candiato/a,
+# y la entrada (i,j) contiene la cantidad de veces que el candiato/a “i” menciona al candiato/a “j”.
 mentions_matrix = pd.DataFrame(data=0, index=top_5, columns=top_5)
 for _, row in df.iterrows():
     candidato = row['speaker']
@@ -352,7 +255,7 @@ for _, row in df.iterrows():
         # Lo agrego a la matriz
         mentions_matrix.loc[candidato, nombre_mencionado] = total
 
-# Opcional: Genere un grafo dirigido con esa matriz de adyacencia para visualizar las menciones.
+# %% Opcional: Genere un grafo dirigido con esa matriz de adyacencia para visualizar las menciones.
 colores_por_candidato = {
     'Bernie Sanders': '#8fbadd',
     'Donald Trump': '#d62728',
@@ -360,60 +263,14 @@ colores_por_candidato = {
     'Kamala Harris': '#4e9cd5',
     'Mike Pence': '#e96a6a'
 }
-graph = nx.from_pandas_adjacency(df=mentions_matrix, create_using=nx.DiGraph)
-edge_weights = nx.get_edge_attributes(G=graph, name='weight')
-fig, ax = plt.subplots(figsize=(8, 6))
-ax.set_xlim(left=-1.1, right=1.2)
-pos = nx.circular_layout(G=graph)
-nx.draw_networkx_nodes(
-    G=graph,
-    pos=pos,
-    node_size=2000,
-    node_color=[colores_por_candidato[node] for node in graph.nodes()]
+directed_graph_plot(
+    df=mentions_matrix,
+    save_path='img/graph.png',
+    plot_title='Grafo Dirigido de Menciones entre Candidatos',
+    colors=colores_por_candidato
 )
-nx.draw_networkx_labels(
-    G=graph,
-    pos=pos,
-    font_family='Latin Modern Roman',
-    font_size=12,
-    font_weight='bold'
-)
-for source, target in graph.edges():
-    rad = 0.2
-    nx.draw_networkx_edges(
-        G=graph,
-        pos=pos,
-        arrows=True,
-        edgelist=[(source, target)],
-        arrowstyle="->",
-        connectionstyle=f"arc3,rad={rad}",
-        arrowsize=20,
-        node_size=2000 if source != target else 2000 * 0.3,
-        edge_color=colores_por_candidato[source]
-    )
-    edge_label = {(source, target): edge_weights[(source, target)]}
-    nx.draw_networkx_edge_labels(
-        G=graph,
-        pos=pos,
-        edge_labels=edge_label,
-        connectionstyle=f'arc3,rad={rad}',
-        font_size=10,
-        font_color=colores_por_candidato[source],
-        font_weight='bold',
-        bbox=dict(facecolor='white', alpha=0.7, edgecolor='none', pad=0.3),
-        rotate=False,
-        node_size=2000 if source != target else 2000 * 0.3
-    )
-fig.suptitle(t='Grafo Dirigido de Menciones entre Candidatos', fontweight='bold', fontsize=18)
-ax.spines['top'].set_visible(False)
-ax.spines['bottom'].set_visible(False)
-ax.spines['left'].set_visible(False)
-ax.spines['right'].set_visible(False)
-fig.tight_layout()
-fig.savefig(fname='img/graph.png', dpi=300)
-plt.close(fig)
 
-# Creo la categoría Otros
+# %% Creo la categoría Otros
 df_speeches_2['speaker_2'] = df_speeches_2['speaker'].apply(lambda x: 'Otros' if x not in top_5 else x)
 grp_otros = list(df_speeches_2.loc[df_speeches_2['speaker_2'] == 'Otros']['speaker'].unique())
 
@@ -537,7 +394,7 @@ politicos = [
     'Zoe Lofgren'
 ]
 
-# Gráfico con la categoría Otros
+# %% Gráfico con la categoría Otros
 df = (
     df_speeches_2[df_speeches_2['speaker'].isin(politicos)]
     .groupby(['week', 'speaker_2'])
@@ -548,26 +405,15 @@ df = (
 df_pivot = df.pivot(index='week', columns='speaker_2', values='speeches').fillna(0)
 df_pivot = df_pivot[['Joe Biden', 'Kamala Harris', 'Bernie Sanders', 'Donald Trump', 'Mike Pence', 'Otros']]
 df_pivot.index = df_pivot.index.strftime('%b %d')
-fig, ax = plt.subplots(figsize=(14, 6))
-df_pivot.plot(
-    kind='bar',
-    stacked=True,
-    # Tiene que estar en el mismo orden que las columnas
-    color=['#1f77b4', '#4e9cd5', '#8fbadd', '#d62728',   '#e96a6a', '#949494'],
-    ax=ax,
-    width=0.8
+stacked_bar_plot(
+    df=df_pivot,
+    save_path='img/discursos_candidatos_por_semana_2.png',
+    color=['#1f77b4', '#4e9cd5', '#8fbadd', '#d62728', '#e96a6a', '#949494'],
+    plot_title='Discursos por Candidato en el Año 2020',
+    xlabel='Semana',
+    ylabel='Cantidad de Discursos',
+    ylim_top=44
 )
-fig.suptitle(t='Discursos por Candidato en el Año 2020', fontweight='bold')
-ax.set_xlabel('Semana')
-ax.set_xticklabels(ax.get_xticklabels(), rotation=30)
-ax.set_ylabel('Cantidad de Discursos')
-ax.set_ylim(bottom=0, top=44)
-ax.set_yticks(np.arange(0, 44, 4))
-ax.legend(title=None, loc='upper center', bbox_to_anchor=(0.5, 1.1), ncol=6, frameon=False)
-ax.yaxis.grid(visible=True, linestyle='--', alpha=0.6)
-ax.set_axisbelow(True)
-ax.spines['top'].set_visible(False)
-ax.spines['right'].set_visible(False)
-fig.tight_layout()
-fig.savefig(fname='img/discursos_candidatos_por_semana_2.png', dpi=300, bbox_inches='tight')
-plt.close(fig)
+
+# %% Ejecuto location_analysis.py
+execute_location_analysis(df=df_speeches)
