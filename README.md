@@ -8,7 +8,7 @@ Integrantes:
 
 Este repositorio contiene el informe, así como los scripts de python usados para la realización de la tarea 1.
 
-El informe se encuentra en el archivo `informe.pdf`.
+El informe se encuentra en el archivo `IntroCD_Tarea1.pdf`.
 
 # Cómo ejecutar los scripts
 
