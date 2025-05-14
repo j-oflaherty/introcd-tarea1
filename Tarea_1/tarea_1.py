@@ -1,13 +1,14 @@
 # %% Importamos los módulos a utilizar
 import locale
 import re
+import sys
 
 import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib.colors import LinearSegmentedColormap
 from wordcloud import STOPWORDS
 
-from utils.clean_data import clean_text, get_state, list_of_tuples, search_punctuation
+from utils.clean_data import clean_text, list_of_tuples, search_punctuation
 from utils.location_analysis import execute as execute_location_analysis
 from utils.plots import (
     circle_packing_plot,
@@ -76,20 +77,30 @@ df_speeches_2 = df_speeches.copy()
 
 # Elimino lo que está entre [] como [crosstalk...], [inaudible...], etc.
 df_speeches_2["text"] = df_speeches_2["text"].str.replace(r"\[.*?\]", "", regex=True)
+
 # Este comercial en particular me rompe el index 79 donde quiero separar las intervenciones
 df_speeches_2["text"] = df_speeches_2["text"].str.replace("Commercial: (48:14)\r\n", "")
+
 # Elimino el patrón ': (mm:ss)'
 df_speeches_2["text"] = df_speeches_2["text"].str.replace(
     r": \(\d{2}:\d{2}\)", "", regex=True
 )
+
 # Elimino el patrón ': (hh:mm:ss)'
 df_speeches_2["text"] = df_speeches_2["text"].str.replace(
     r": \(\d{2}:\d{2}\:\d{2}\)", "", regex=True
 )
+
 # Convierto la columna en una lista donde cada elemento es una intervención de un orador
-df_speeches_2["text"] = df_speeches_2["text"].str.split(
-    r"[(\r\n)\n](?:\xa0[(\r\n)\n])?", regex=True
-)
+# Hay que aplicar un regex si es Mac y otro si es Windows
+if sys.platform == "win32":
+    df_speeches_2["text"] = df_speeches_2["text"].str.split(
+        r"\r\n(?:\xa0\r\n)?", regex=True
+    )
+else:
+    df_speeches_2["text"] = df_speeches_2["text"].str.split(
+        r"[(\r\n)\n](?:\xa0[(\r\n)\n])?", regex=True
+    )
 
 # Convierto la lista en una lista de tuplas donde cada tupla tiene el par orador-discurso
 df_speeches_2["text"] = df_speeches_2["text"].apply(list_of_tuples)
@@ -512,5 +523,3 @@ stacked_bar_plot(
 
 # %% Ejecuto location_analysis.py
 execute_location_analysis(df=df_speeches)
-
-# %%

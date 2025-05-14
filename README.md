@@ -10,6 +10,15 @@ Este repositorio contiene el informe, así como los scripts de python usados par
 
 El informe se encuentra en el archivo `IntroCD_Tarea1.pdf`.
 
+# Prerrequisito
+
+Es necesario tener instalada la fuente *Latin Modern Roman* en el sistema. De no ser así, la misma puede descargarse desde: https://mirror.ctan.org/fonts/lm.zip.
+Para instalar la fuente:
+
+1. Descomprima el ZIP
+2. Ir a `fonts > opentype > public > lm`
+3. Seleccionar todos los archivos, hacer click derecho e instalar.
+
 # Cómo ejecutar los scripts
 
 Para ejecutar los scripts, primero es necesario instalar las dependencias.
