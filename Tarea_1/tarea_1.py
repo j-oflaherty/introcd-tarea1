@@ -286,7 +286,7 @@ STOPWORDS.update(
 word_cloud_plot(
     df=df,
     save_path="img/wordcloud_por_candidato.png",
-    plot_title="TOP 100 de Palabras más Utilizadas por Candidato",
+    plot_title="",
     colormap=us_cmap,
     stopwords=STOPWORDS,
     max_words=100,

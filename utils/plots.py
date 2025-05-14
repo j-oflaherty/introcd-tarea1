@@ -115,7 +115,7 @@ def word_cloud_plot(df: pd.DataFrame, save_path: str, plot_title: str, colormap,
         ).generate(row[text])
         ax[i].imshow(wc, interpolation='bilinear')
         ax[i].axis('off')
-        ax[i].set_title(row[speaker])
+        ax[i].set_title(row[speaker], fontsize=30)
     fig.suptitle(t=plot_title, fontweight='bold', x=0.45)
     fig.tight_layout()
     fig.subplots_adjust(right=0.9, left=0, bottom=0, top=0.85)
